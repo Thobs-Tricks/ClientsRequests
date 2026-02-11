@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>💗 Will you be my Valentine Mahlatse? 💗</title>
-    <!-- Pink everything, romantic Spotify with AUTOPLAY -->
+    <!-- Pink everything, romantic Spotify with AUTOPLAY & PERFECT FIT -->
     <style>
         * {
             margin: 0;
@@ -168,14 +168,13 @@
             transform: scale(1.08);
         }
 
-        /* Spotify romance section - AUTOPLAY ENABLED */
+        /* ===== SPOTIFY CONTAINER - EXACT FIT TO IFRAME ===== */
         .spotify-romance {
             margin: 35px auto 25px;
-            padding: 12px;
-            background: #ffdae0;
-            border-radius: 24px;
-            border: 4px solid #ff779b;
-            box-shadow: 0 0 0 6px #ffb6c1;
+            padding: 0; /* NO PADDING - exact fit */
+            background: transparent; /* no background, let iframe shine */
+            border: none; /* no border */
+            box-shadow: none; /* no shadow */
             width: 100%;
             max-width: 650px;
             display: flex;
@@ -184,12 +183,41 @@
             justify-content: center;
         }
 
+        /* iframe styling - all visual effects directly on iframe */
         iframe {
             border-radius: 12px !important;
             width: 100%;
             height: 352px;
-            box-shadow: 0 12px 28px #ff5690;
-            border: 3px solid white;
+            box-shadow: 0 12px 28px #ff5690; /* shadow on iframe itself */
+            border: 3px solid white; /* border on iframe itself */
+            transition: all 0.2s ease;
+        }
+
+        /* optional hover effect */
+        iframe:hover {
+            box-shadow: 0 18px 36px #ff3b6f;
+            transform: scale(1.01);
+        }
+
+        /* caption stays outside, perfectly centered */
+        .spotify-caption {
+            color: #95234e;
+            font-weight: bold;
+            margin-top: 16px;
+            font-size: 1.2rem;
+            text-align: center;
+            width: 100%;
+        }
+
+        .spotify-caption span {
+            font-size: 1rem;
+            background: #ffb6c1;
+            padding: 6px 22px;
+            border-radius: 40px;
+            display: inline-block;
+            margin-top: 8px;
+            box-shadow: 0 4px 10px #ffa5b0;
+            border: 2px solid white;
         }
 
         /* hidden no becomes invisible */
@@ -296,25 +324,7 @@
             100% { transform: translateX(0); }
         }
 
-        .spotify-caption {
-            color: #95234e;
-            font-weight: bold;
-            margin-top: 12px;
-            font-size: 1.2rem;
-            text-align: center;
-            width: 100%;
-        }
-
-        .spotify-caption span {
-            font-size: 1rem;
-            background: #ffb6c1;
-            padding: 5px 20px;
-            border-radius: 30px;
-            display: inline-block;
-            margin-top: 6px;
-        }
-
-        /* pulse animation */
+        /* pulse animation for decorations */
         @keyframes pulse {
             0% { transform: scale(1); opacity: 0.2; }
             50% { transform: scale(1.1); opacity: 0.3; }
@@ -347,11 +357,11 @@
                 <button class="btn btn-no" id="noBtn">NO 💔</button>
             </div>
 
-            <!-- ✅ SPOTIFY WITH AUTOPLAY - STARTS IMMEDIATELY -->
+            <!-- ✅ SPOTIFY WITH ZERO PADDING - CONTAINER FITS IFRAME EXACTLY -->
             <div class="spotify-romance">
                 <iframe 
                     data-testid="embed-iframe" 
-                    style="border-radius:12px" 
+                    style="border-radius:12px;" 
                     src="https://open.spotify.com/embed/track/564GwAZ1PayxB1OXkUPkky?utm_source=generator&autoplay=1" 
                     width="100%" 
                     height="352" 
@@ -405,33 +415,23 @@
             createHearts();
 
             // ---------- FORCE AUTOPLAY ----------
-            // Some browsers restrict autoplay. This attempts to trigger play via user interaction simulation,
-            // but the best we can do is add &autoplay=1 to the src and set allow="autoplay"
-            // Additionally, we'll try to programmatically trigger play if possible
             function triggerSpotifyPlay() {
                 const iframe = document.querySelector('iframe');
                 if (iframe) {
-                    // Most reliable: we already added autoplay=1 to the src
-                    console.log('🎵 Spotify autoplay requested - browser may require user interaction');
-                    
-                    // Try to send play command to Spotify iframe (works in some browsers)
+                    console.log('🎵 Spotify autoplay requested - &autoplay=1 in src');
                     try {
-                        // This is a best-effort approach
                         iframe.contentWindow.postMessage({
                             command: 'play',
                             context: 'track:564GwAZ1PayxB1OXkUPkky'
                         }, '*');
                     } catch(e) {
-                        // Silent fail - autoplay=1 in src is our best bet
+                        // silent
                     }
                 }
             }
 
-            // Call autoplay attempt on load
             window.addEventListener('load', function() {
                 triggerSpotifyPlay();
-                
-                // Also try to play on first user interaction with page
                 document.body.addEventListener('click', function once() {
                     triggerSpotifyPlay();
                     document.body.removeEventListener('click', once);
@@ -517,10 +517,5 @@
     <div style="position:fixed; bottom:20px; left:20px; font-size:2.2rem; opacity:0.2; z-index:20; animation: pulse 2s infinite;">💗</div>
     <div style="position:fixed; top:20px; right:25px; font-size:3rem; opacity:0.2; z-index:20; transform:rotate(10deg); animation: pulse 2.5s infinite;">🌸</div>
     
-    <!-- hidden audio trigger for browsers that block iframe autoplay -->
-    <div style="display:none;">
-        <!-- This helps trigger autoplay in some browsers -->
-        <audio id="spotifyTrigger" preload="none"></audio>
-    </div>
 </body>
 </html>
