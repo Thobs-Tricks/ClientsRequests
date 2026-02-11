@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>💗 Will you be my Valentine Mahlatse? 💗</title>
-    <!-- Pink everything, romantic Spotify with AUTOPLAY & PERFECT FIT -->
+    <title>Will You Be My Valentine? 💙</title>
     <style>
         * {
             margin: 0;
@@ -13,507 +12,489 @@
         }
 
         body {
-            background: linear-gradient(145deg, #ffb6c1 0%, #ffc0cb 40%, #ffe4ec 100%);
-            font-family: 'Quicksand', 'Segoe UI', 'Comic Neue', cursive, sans-serif;
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #a8d8ff 0%, #7ec8ff 50%, #b0e0ff 100%);
+            /* Sky blue romantic gradient */
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 1.5rem;
+            overflow-x: hidden;
             position: relative;
-            overflow-x: auto;
         }
 
-        /* floating hearts - background decoration */
-        .floating-hearts {
+        /* Floating hearts background - soft gray/blue */
+        .heart-bg {
             position: fixed;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none;
+            overflow: hidden;
             z-index: 0;
+            pointer-events: none;
         }
 
-        .heart-float {
+        .heart {
             position: absolute;
-            color: rgba(255, 105, 180, 0.3);
-            font-size: 2.2rem;
-            animation: floatUp 10s linear infinite;
-            user-select: none;
+            font-size: 30px;
+            opacity: 0.25;
+            animation: float 18s infinite;
+            color: #2c3e50; /* dark gray-blue for hearts */
         }
 
-        @keyframes floatUp {
-            0% { transform: translateY(100vh) scale(0.8); opacity: 0.6; }
-            100% { transform: translateY(-10vh) scale(1.3); opacity: 0; }
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.25;
+            }
+            90% {
+                opacity: 0.25;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
         }
 
-        /* main wrapper - everything centered */
-        .main-wrapper {
-            width: 100%;
-            max-width: 1100px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+        .container {
             position: relative;
-            z-index: 10;
+            z-index: 1;
+            max-width: 800px;
             margin: 0 auto;
+            padding: 40px 20px;
+            min-height: 100vh;
         }
 
-        /* main card – all pink, glossy & cute */
-        .valentine-card {
-            background: rgba(255, 220, 240, 0.85);
+        .proposal-section {
+            background: rgba(44, 62, 80, 0.85); /* charcoal black/gray with transparency */
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            border-radius: 60px 60px 60px 60px;
-            border: 3px solid #ff99aa;
-            box-shadow: 0 20px 40px rgba(255, 20, 147, 0.3), 0 0 0 8px #ffe4ec inset;
-            width: 100%;
-            max-width: 950px;
-            padding: 2.5rem 2rem;
-            margin: 20px auto;
-            position: relative;
+            border-radius: 30px;
+            padding: 60px 40px;
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 0 2px #87ceeb inset, 0 0 0 4px #2c3e50 inset;
+            margin-bottom: 40px;
+            border: 1px solid #87ceeb;
         }
 
-        .proposal-text {
-            font-size: 2.8rem;
-            font-weight: 800;
-            color: #a6266e;
-            text-shadow: 4px 4px 0 #ffb7c5, 6px 6px 20px #ff69b4;
-            letter-spacing: 2px;
-            word-break: break-word;
-            margin-bottom: 0.5rem;
-            line-height: 1.2;
-            text-align: center;
-            width: 100%;
-        }
-
-        .proposal-name {
-            font-size: 3.5rem;
-            background: linear-gradient(45deg, #d4246c, #ff8eb5);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            display: inline-block;
-            filter: drop-shadow(0 8px 6px #ffc0cb);
-            text-align: center;
-            width: 100%;
-        }
-
-        .from-name {
-            font-size: 1.5rem;
-            color: #b34167;
-            margin-top: 0;
+        h1 {
+            font-size: 3em;
+            color: #87ceeb; /* sky blue */
             margin-bottom: 30px;
-            font-style: italic;
-            border-bottom: 3px dotted #ffa6c9;
-            display: inline-block;
-            padding-bottom: 6px;
-            text-align: center;
+            text-shadow: 3px 3px 0 #2c3e50, 5px 5px 10px rgba(135, 206, 235, 0.5);
+            animation: pulse 2.5s infinite;
+            letter-spacing: 2px;
         }
 
-        /* BUTTON AREA */
-        .button-section {
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                text-shadow: 3px 3px 0 #2c3e50, 5px 5px 15px #87ceeb;
+            }
+            50% {
+                transform: scale(1.03);
+                text-shadow: 4px 4px 0 #2c3e50, 8px 8px 20px #7ec8ff;
+            }
+        }
+
+        .name {
+            font-size: 2.5em;
+            color: #e0f0ff; /* soft sky white */
+            font-weight: bold;
+            margin: 20px 0;
+            font-style: italic;
+            text-shadow: 2px 2px 0 #2c3e50, 4px 4px 8px black;
+            background: linear-gradient(45deg, #b0e0ff, #87ceeb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px #1a2632;
+        }
+
+        .from {
+            font-size: 1.3em;
+            color: #b0e0ff; /* powder blue */
+            margin-top: 20px;
+            font-style: italic;
+            text-shadow: 1px 1px 0 #2c3e50;
+            border-top: 2px solid #87ceeb;
+            border-bottom: 2px solid #87ceeb;
+            display: inline-block;
+            padding: 10px 20px;
+        }
+
+        .buttons-container {
+            margin-top: 50px;
             display: flex;
-            flex-wrap: wrap;
-            align-items: center;
+            gap: 20px;
             justify-content: center;
-            gap: 2.5rem;
-            margin: 2.8rem 0 2rem;
-            width: 100%;
+            align-items: center;
+            flex-wrap: wrap;
+            min-height: 100px;
         }
 
         .btn {
+            padding: 20px 40px;
+            font-size: 1.5em;
             border: none;
-            cursor: pointer;
-            font-weight: 700;
             border-radius: 60px;
-            transition: all 0.25s ease;
-            box-shadow: 0 12px 0 #b3405a, 0 12px 25px rgba(200, 30, 80, 0.5);
-            font-family: inherit;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 0 #1a2632, 0 10px 25px rgba(0,0,0,0.5);
+            border: 2px solid #87ceeb;
             letter-spacing: 2px;
-            text-transform: uppercase;
-            border: 2px solid white;
         }
 
-        .btn-yes {
-            background: #ff4d6d;
-            color: white;
-            font-size: 2rem;
-            padding: 1.2rem 2.8rem;
-            box-shadow: 0 12px 0 #a1334b, 0 15px 30px #ff80a5;
-            transform: scale(1);
-            border: 3px solid #ffe9f0;
+        .yes-btn {
+            background: linear-gradient(145deg, #2c3e50, #1a2632); /* black/gray */
+            color: #e0f0ff;
+            text-shadow: 0 1px 2px black;
+            border: 2px solid #87ceeb;
+            box-shadow: 0 10px 0 #0f1a24, 0 12px 25px #00000066;
         }
 
-        .btn-no {
-            background: #b3243e;
-            color: #ffe4ec;
-            font-size: 2rem;
-            padding: 1.2rem 2.8rem;
-            background: #c13b55;
-            box-shadow: 0 12px 0 #6f1d2b, 0 12px 25px #cc7b8b;
-            border: 3px solid #ffc2c9;
+        .yes-btn:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 8px 0 #0f1a24, 0 18px 35px #00000080;
+            background: linear-gradient(145deg, #34495e, #2c3e50);
+            border-color: #b0e0ff;
         }
 
-        .btn-yes:hover {
-            background: #ff1a4f;
-            transform: scale(1.08);
+        .no-btn {
+            background: linear-gradient(145deg, #4a5c6b, #34495e);
+            color: #d3eaff;
+            border: 2px solid #7ec8ff;
+            box-shadow: 0 10px 0 #1e2b36, 0 12px 25px black;
         }
 
-        /* ===== SPOTIFY CONTAINER - EXACT FIT TO IFRAME ===== */
-        .spotify-romance {
-            margin: 35px auto 25px;
-            padding: 0; /* NO PADDING - exact fit */
-            background: transparent; /* no background, let iframe shine */
-            border-radius: 12px;
-            border: 3px solid white;
-            box-shadow: 0 12px 28px #ff5690;
-            overflow: hidden;
-            width: 100%;
-            max-width: 650px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+        .no-btn:hover {
+            background: linear-gradient(145deg, #5a6c7b, #4a5c6b);
+            border-color: #b0e0ff;
         }
 
-        /* iframe styling - all visual effects directly on iframe */
-        iframe {
-             display: block;
-             width: 100%;
-             border: none;
-        }
-
-        /* optional hover effect */
-        iframe:hover {
-            box-shadow: 0 18px 36px #ff3b6f;
-            transform: scale(1.01);
-        }
-
-        /* caption stays outside, perfectly centered */
-        .spotify-caption {
-            color: #95234e;
-            font-weight: bold;
-            margin-top: 16px;
-            font-size: 1.2rem;
-            text-align: center;
-            width: 100%;
-        }
-
-        .spotify-caption span {
-            font-size: 1rem;
-            background: #ffb6c1;
-            padding: 6px 22px;
-            border-radius: 40px;
-            display: inline-block;
-            margin-top: 8px;
-            box-shadow: 0 4px 10px #ffa5b0;
-            border: 2px solid white;
-        }
-
-        /* hidden no becomes invisible */
-        .no-hidden .btn-no {
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.2s;
-        }
-
-        /* celebration animation */
-        .celebration-active {
-            animation: popConfetti 0.8s infinite alternate;
-        }
-
-        @keyframes popConfetti {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.02); background: #ffe4f0; }
-        }
-
-        .cute-message {
-            font-size: 2rem;
-            color: #c42e5c;
-            background: #fff0f5dd;
-            padding: 20px;
-            border-radius: 70px 20px 70px 20px;
-            margin: 30px auto 0;
-            font-weight: bold;
-            border: 6px double #ff80a5;
+        /* Success screen */
+        .success-screen {
             display: none;
-            width: 90%;
-            max-width: 700px;
+            background: rgba(44, 62, 80, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 60px 40px;
             text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 0 3px #87ceeb inset, 0 0 0 6px #2c3e50 inset;
+            border: 1px solid #b0e0ff;
+            animation: fadeIn 1s ease;
         }
 
-        .cute-message.show-message {
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .success-screen h2 {
+            font-size: 3em;
+            color: #b0e0ff;
+            margin-bottom: 30px;
+            animation: heartbeat 1.8s infinite;
+            text-shadow: 3px 3px 0 #1a2632, 5px 5px 15px #87ceeb;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            25% {
+                transform: scale(1.1);
+            }
+            50% {
+                transform: scale(1);
+            }
+            75% {
+                transform: scale(1.05);
+            }
+        }
+
+        .success-message {
+            font-size: 1.5em;
+            color: #e6f3ff;
+            margin: 20px 0;
+            line-height: 1.6;
+            text-shadow: 1px 1px 0 #1a2632;
+            background: rgba(26, 38, 50, 0.5);
+            padding: 25px;
+            border-radius: 50px;
+            border: 2px solid #87ceeb;
+        }
+
+        .spotify-container {
+            margin: 40px 0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 0 3px #2c3e50, 0 0 0 6px #87ceeb;
+            border: 2px solid white;
+        }
+
+        iframe {
             display: block;
-            animation: bounceIn 0.8s;
+            border-radius: 12px !important;
         }
 
-        @keyframes bounceIn {
-            0% { transform: scale(0.1); opacity: 0; }
-            60% { transform: scale(1.2); }
-            100% { transform: scale(1); }
-        }
-
-        /* footer - perfectly centered */
-        .designer-footer {
-            margin: 40px auto 20px;
-            padding: 15px 30px;
-            background: #ffc2c9ee;
-            border-radius: 60px 60px 20px 20px;
-            color: #5e2e3c;
-            font-size: 1.2rem;
-            font-weight: 600;
-            border: 3px solid white;
-            backdrop-filter: blur(5px);
-            width: fit-content;
-            max-width: 95%;
-            box-shadow: 0 0 0 4px #ff99aa;
+        /* Footer - black/gray/skyblue */
+        .footer {
+            background: rgba(26, 38, 50, 0.9);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 40px 40px 20px 20px;
+            padding: 30px;
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            margin-top: 40px;
+            border: 2px solid #87ceeb;
+            box-shadow: 0 10px 0 #0f1a24, 0 15px 30px black;
         }
 
-        .designer-footer a {
-            color: #871c44;
+        .footer p {
+            color: #cce7ff;
+            margin: 10px 0;
+            font-size: 1.1em;
+            text-shadow: 1px 1px 0 #1a2632;
+        }
+
+        .footer .designer {
+            font-weight: bold;
+            color: #b0e0ff;
+            margin-top: 15px;
+            font-size: 1.3em;
+            letter-spacing: 2px;
+            border-bottom: 2px solid #87ceeb;
+            display: inline-block;
+            padding-bottom: 8px;
+        }
+
+        .footer a {
+            color: #b0e0ff;
             text-decoration: none;
-            border-bottom: 2px solid #ffc0cb;
+            transition: all 0.3s;
+            border-bottom: 1px dotted #87ceeb;
+            padding: 2px 5px;
         }
 
-        .designer-footer a:hover {
-            color: #4f0a1f;
+        .footer a:hover {
+            color: #ffffff;
+            border-bottom: 2px solid white;
+            background: #2c3e50;
+            border-radius: 20px;
         }
 
-        .small-note {
-            font-size: 1rem;
-            color: #7a3b46;
-            margin-top: 6px;
-            text-align: center;
+        /* Confetti - sky blue, black, gray */
+        .confetti {
+            position: fixed;
+            width: 12px;
+            height: 12px;
+            background: #87ceeb;
+            position: absolute;
+            animation: confetti-fall 3s linear forwards;
+            border-radius: 0 50% 50% 50%;
+            transform: rotate(45deg);
+            opacity: 0.8;
         }
 
-        /* responsive */
-        @media (max-width: 700px) {
-            .proposal-text { font-size: 2rem; }
-            .proposal-name { font-size: 2.5rem; }
-            .btn { font-size: 1.6rem; padding: 1rem 2rem; }
-            iframe { height: 280px; }
-            .valentine-card { padding: 1.8rem 1.2rem; }
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-10px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
         }
 
-        @media (max-width: 480px) {
-            .button-section { gap: 1.2rem; }
-            .btn-yes, .btn-no { font-size: 1.4rem; padding: 0.8rem 1.5rem; }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+            .name {
+                font-size: 1.8em;
+            }
+            .btn {
+                padding: 15px 30px;
+                font-size: 1.2em;
+            }
+            .proposal-section {
+                padding: 40px 20px;
+            }
         }
 
-        /* shake animation */
-        @keyframes shake {
-            0% { transform: translateX(0); }
-            25% { transform: translateX(-7px); }
-            50% { transform: translateX(7px); }
-            75% { transform: translateX(-3px); }
-            100% { transform: translateX(0); }
+        /* Custom sky blue highlights */
+        .proposal-section p {
+            color: #d4f0ff;
+            text-shadow: 1px 1px 0 #1a2632;
         }
 
-        /* pulse animation for decorations */
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 0.2; }
-            50% { transform: scale(1.1); opacity: 0.3; }
-            100% { transform: scale(1); opacity: 0.2; }
+        .spotify-container iframe {
+            border: 2px solid #2c3e50;
+        }
+
+        /* Romantic gray accents */
+        .heart {
+            color: #5a6c7b;
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Floating hearts background - gray & skyblue tones -->
+    <div class="heart-bg" id="heartBg"></div>
 
-    <div class="floating-hearts" id="floatingHearts"></div>
-
-    <div class="main-wrapper">
-        <div class="valentine-card" id="proposalCard">
+    <div class="container">
+        <!-- Proposal Section -->
+        <div class="proposal-section" id="proposalSection">
+            <h1>💙 Will You Be My Valentine? 💙</h1>
+            <div class="name">Yanda</div>
+            <p style="font-size: 1.3em; color: #e0f0ff; margin: 20px 0; text-shadow: 1px 1px 0 #2c3e50;">
+                Beneath these skies of blue, my heart beats only for you... 🌹✨
+            </p>
+            <div class="from">From: Stranger 💙</div>
             
-            <div style="font-size:5rem; line-height:1; text-align:center; width:100%;">💗💘💖</div>
+            <div class="spotify-container">
+                <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/646gw7SBLjQBZyGU5HWsRc?utm_source=generator&autoplay=1" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
             
-            <div class="proposal-text">
-                Will you be my Valentine
-            </div>
-            <div class="proposal-name">
-                Mahlatse? 💕
-            </div>
-            <div class="from-name">
-                💌 from Tokologo Thobejane 💌
-            </div>
-
-            <div class="button-section" id="buttonGroup">
-                <button class="btn btn-yes" id="yesBtn">YES 💖</button>
-                <button class="btn btn-no" id="noBtn">NO 💔</button>
-            </div>
-
-            <!-- ✅ SPOTIFY WITH ZERO PADDING - CONTAINER FITS IFRAME EXACTLY -->
-            <div class="spotify-romance">
-                <iframe 
-                    data-testid="embed-iframe" 
-                    style="border-radius:12px;" 
-                    src="https://open.spotify.com/embed/track/564GwAZ1PayxB1OXkUPkky?utm_source=generator&autoplay=1" 
-                    width="100%" 
-                    frameBorder="0" 
-                    allowfullscreen="" 
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                    loading="lazy">
-                </iframe>
-                <div class="spotify-caption">
-                    🎶 Limit Nala ft Nkosasana – Daughter Mahala 🎶 <br>
-                    <span>💕 playing now for Mahlatse 💕</span>
-                </div>
-            </div>
-
-            <div class="cute-message" id="celebrationMessage">
-                💞💞 YAY! Mahlatse said YES! 💞💞 <br>
-                Tokologo loves you endlessly! 🌹🌸🌺<br>
-                <span style="font-size:3rem;">💑💋❤️</span>
+            <div class="buttons-container">
+                <button class="btn yes-btn" id="yesBtn" onclick="handleYes()">Yes! 💙</button>
+                <button class="btn no-btn" id="noBtn" onclick="handleNo()">No</button>
             </div>
         </div>
 
-        <div class="designer-footer">
-            <div>💗 Designed by Shepherd Thobejane 💗</div>
-            <div class="small-note">
-                📞 0836439745  •  📧 <a href="mailto:shekgauthobs1@gmail.com">shekgauthobs1@gmail.com</a>
+        <!-- Success Section (hidden initially) -->
+        <div class="success-screen" id="successScreen">
+            <h2>🎉 Yay! You Said Yes! 🎉</h2>
+            <div class="success-message">
+                💙 I'm so happy! You've just made this Valentine's Day the most special one ever! 💙
+                <br><br>
+                Can't wait to celebrate with you, Yaya, on the 7th under the sky blue! ✨🌹
+                <br><br>
+                <span style="font-size: 2.5em; color: #87ceeb; text-shadow: 2px 2px 0 #1a2632;">💙 💕 💖 💗 💓 💝</span>
             </div>
-            <div style="font-size:0.95rem; margin-top:5px; text-align:center;">© pink paradise for Mahlatse ✨</div>
+
+            <div class="spotify-container">
+                <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/646gw7SBLjQBZyGU5HWsRc?utm_source=generator&autoplay=1" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p class="designer">Designed with 💙 by Shepherd Thobejane</p>
+            <p>
+                📞 <a href="tel:0836439745">083 643 9745</a><br>
+                📧 <a href="mailto:shekgauthobs1@gmail.com">shekgauthobs1@gmail.com</a>
+            </p>
+            <p style="font-size: 0.9em; color: #a0d0ff; margin-top: 15px;">© sky blue romance for Yanda ✨</p>
         </div>
     </div>
 
     <script>
-        (function() {
-            "use strict";
-
-            // ---------- FLOATING HEARTS ----------
-            function createHearts() {
-                const container = document.getElementById('floatingHearts');
-                for (let i = 0; i < 40; i++) {
-                    const heart = document.createElement('div');
-                    heart.className = 'heart-float';
-                    heart.innerHTML = '💗';
-                    heart.style.left = Math.random() * 100 + '%';
-                    heart.style.animationDelay = Math.random() * 12 + 's';
-                    heart.style.fontSize = (Math.random() * 2.2 + 1.2) + 'rem';
-                    heart.style.opacity = Math.random() * 0.4 + 0.2;
-                    heart.style.animationDuration = (Math.random() * 8 + 6) + 's';
-                    heart.style.color = `rgb(255, ${Math.floor(150 + Math.random() * 80)}, ${Math.floor(170 + Math.random() * 85)})`;
-                    container.appendChild(heart);
-                }
+        // Create floating hearts - sky blue & gray palette
+        function createHearts() {
+            const heartBg = document.getElementById('heartBg');
+            const hearts = ['💙', '💕', '💖', '💗', '💓', '✨', '🌹'];
+            
+            for (let i = 0; i < 20; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.animationDelay = Math.random() * 15 + 's';
+                heart.style.fontSize = (Math.random() * 20 + 25) + 'px';
+                heart.style.color = i % 2 === 0 ? '#87ceeb' : '#5a6c7b'; // sky blue or gray
+                heart.style.opacity = '0.2';
+                heartBg.appendChild(heart);
             }
-            createHearts();
+        }
 
-            // ---------- FORCE AUTOPLAY ----------
-            function triggerSpotifyPlay() {
-                const iframe = document.querySelector('iframe');
-                if (iframe) {
-                    console.log('🎵 Spotify autoplay requested - &autoplay=1 in src');
-                    try {
-                        iframe.contentWindow.postMessage({
-                            command: 'play',
-                            context: 'track:564GwAZ1PayxB1OXkUPkky'
-                        }, '*');
-                    } catch(e) {
-                        // silent
-                    }
-                }
-            }
+        createHearts();
 
-            window.addEventListener('load', function() {
-                triggerSpotifyPlay();
-                document.body.addEventListener('click', function once() {
-                    triggerSpotifyPlay();
-                    document.body.removeEventListener('click', once);
-                }, { once: true });
-            });
+        let noClickCount = 0;
+        const yesBtn = document.getElementById('yesBtn');
+        const noBtn = document.getElementById('noBtn');
+        const proposalSection = document.getElementById('proposalSection');
+        const successScreen = document.getElementById('successScreen');
 
-            // ---------- YES/NO BUTTON LOGIC ----------
-            const yesBtn = document.getElementById('yesBtn');
-            const noBtn = document.getElementById('noBtn');
-            const buttonGroup = document.getElementById('buttonGroup');
-            const card = document.getElementById('proposalCard');
-            const celebrationMsg = document.getElementById('celebrationMessage');
-
-            let yesScale = 1.0;
-            let hoverCount = 0;
-            const MAX_HOVER = 7;
-
-            function makeYesBigger() {
-                if (hoverCount >= MAX_HOVER) return;
-                hoverCount++;
-
-                yesScale += 0.2;
-                yesBtn.style.transform = `scale(${yesScale})`;
-                yesBtn.style.transition = 'transform 0.2s ease, background 0.2s';
-                
-                let noOpacity = Math.max(0, 1.0 - hoverCount * 0.17);
-                noBtn.style.opacity = noOpacity;
-                noBtn.style.transform = `scale(${Math.max(0.5, 1 - hoverCount * 0.1)})`;
-                noBtn.style.filter = `blur(${hoverCount * 0.3}px)`;
-                
-                if (noOpacity <= 0.1 || hoverCount >= MAX_HOVER - 1) {
-                    noBtn.style.opacity = '0';
-                    noBtn.style.pointerEvents = 'none';
-                    buttonGroup.classList.add('no-hidden');
-                }
-            }
-
-            if (noBtn) {
-                noBtn.addEventListener('mouseenter', makeYesBigger);
-                noBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    makeYesBigger();
-                    noBtn.style.animation = 'shake 0.3s';
-                    setTimeout(() => { noBtn.style.animation = ''; }, 300);
-                });
-            }
-
-            yesBtn.addEventListener('click', function() {
-                celebrationMsg.classList.add('show-message');
-                card.classList.add('celebration-active');
-                
-                noBtn.style.opacity = '0';
-                noBtn.style.pointerEvents = 'none';
+        function handleNo() {
+            noClickCount++;
+            
+            // Increase yes button size (sky blue glory)
+            const currentSize = 1 + (noClickCount * 0.25);
+            yesBtn.style.transform = `scale(${currentSize})`;
+            yesBtn.style.transition = 'all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1)';
+            
+            // Decrease no button size and fade
+            const noSize = Math.max(0, 1 - (noClickCount * 0.18));
+            noBtn.style.transform = `scale(${noSize})`;
+            noBtn.style.opacity = noSize;
+            
+            // Move no button slightly - romantic drift
+            const randomX = (Math.random() - 0.5) * 70;
+            const randomY = (Math.random() - 0.5) * 40;
+            noBtn.style.position = 'relative';
+            noBtn.style.left = randomX + 'px';
+            noBtn.style.top = randomY + 'px';
+            
+            if (noClickCount >= 5) {
                 noBtn.style.display = 'none';
-                buttonGroup.classList.add('no-hidden');
-                
-                yesBtn.style.transform = 'scale(1.8)';
-                yesBtn.style.background = '#ff1a4f';
-                yesBtn.style.boxShadow = '0 0 30px #ffb7c5, 0 15px 0 #951f3c';
-                
-                for (let i = 0; i < 20; i++) {
-                    const heart = document.createElement('span');
-                    heart.innerHTML = '🌸💖🌸';
-                    heart.style.position = 'absolute';
-                    heart.style.left = Math.random() * 90 + '%';
-                    heart.style.top = Math.random() * 90 + '%';
-                    heart.style.fontSize = (Math.random() * 2 + 2) + 'rem';
-                    heart.style.animation = 'floatUp 2s forwards';
-                    heart.style.opacity = '0.9';
-                    heart.style.pointerEvents = 'none';
-                    card.appendChild(heart);
-                    setTimeout(() => { heart.remove(); }, 2000);
-                }
+                noBtn.style.opacity = '0';
+            }
 
-                noBtn.removeEventListener('mouseenter', makeYesBigger);
-            }, { once: true });
+            // Add subtle blue glow to yes button
+            yesBtn.style.boxShadow = `0 12px 0 #0f1a24, 0 18px 35px #87ceeb`;
+        }
 
-            buttonGroup.classList.remove('no-hidden');
-        })();
+        function handleYes() {
+            // Hide proposal, show success
+            proposalSection.style.display = 'none';
+            successScreen.style.display = 'block';
+            
+            // Create confetti effect - sky blue, black, gray
+            createConfetti();
+            
+            // Scroll to top smoothly
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // Playful blue flash
+            document.body.style.background = 'linear-gradient(135deg, #b0e0ff 0%, #7ec8ff 50%, #a8d8ff 100%)';
+        }
+
+        function createConfetti() {
+            const colors = ['#87ceeb', '#b0e0ff', '#5a6c7b', '#2c3e50', '#7ec8ff', '#34495e', '#a0d0ff'];
+            const container = document.querySelector('.container');
+            
+            for (let i = 0; i < 70; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = Math.random() * 100 + '%';
+                    confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.animationDelay = Math.random() * 2 + 's';
+                    confetti.style.width = (Math.random() * 12 + 6) + 'px';
+                    confetti.style.height = (Math.random() * 12 + 6) + 'px';
+                    confetti.style.boxShadow = '0 0 10px #87ceeb';
+                    container.appendChild(confetti);
+                    
+                    setTimeout(() => confetti.remove(), 3500);
+                }, i * 25);
+            }
+        }
+
+        // Reset button styles on window resize (for mobile)
+        window.addEventListener('resize', function() {
+            if (proposalSection.style.display !== 'none') {
+                yesBtn.style.transform = `scale(${1 + (noClickCount * 0.25)})`;
+            }
+        });
     </script>
-
-    <!-- decorative elements -->
-    <div style="position:fixed; bottom:20px; left:20px; font-size:2.2rem; opacity:0.2; z-index:20; animation: pulse 2s infinite;">💗</div>
-    <div style="position:fixed; top:20px; right:25px; font-size:3rem; opacity:0.2; z-index:20; transform:rotate(10deg); animation: pulse 2.5s infinite;">🌸</div>
-    
 </body>
 </html>
