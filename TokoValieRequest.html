@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💗 Will you be my Valentine Mahlatse? 💗</title>
+    <!-- Pink everything, romantic Spotify & cute animations -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #ffb6c1 0%, #ffc0cb 40%, #ffe4ec 100%);
+            /* PINKKKKK domination */
+            font-family: 'Quicksand', 'Segoe UI', 'Comic Neue', cursive, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            position: relative;
+            overflow-x: auto;
+        }
+
+        /* floating hearts + deco animation background */
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .heart-float {
+            position: absolute;
+            color: rgba(255, 105, 180, 0.3);
+            font-size: 2.2rem;
+            animation: floatUp 10s linear infinite;
+            user-select: none;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) scale(0.8); opacity: 0.6; }
+            100% { transform: translateY(-10vh) scale(1.3); opacity: 0; }
+        }
+
+        /* main card – all pink, glossy & cute */
+        .valentine-card {
+            background: rgba(255, 220, 240, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 60px 60px 60px 60px;
+            border: 3px solid #ff99aa;
+            box-shadow: 0 20px 40px rgba(255, 20, 147, 0.3), 0 0 0 8px #ffe4ec inset;
+            max-width: 1000px;
+            width: 100%;
+            padding: 2.5rem 2rem;
+            margin: 20px 0;
+            position: relative;
+            z-index: 10;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        /* her name glam */
+        .proposal-text {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #a6266e;
+            text-shadow: 4px 4px 0 #ffb7c5, 6px 6px 20px #ff69b4;
+            letter-spacing: 2px;
+            word-break: break-word;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .proposal-name {
+            font-size: 3.5rem;
+            background: linear-gradient(45deg, #d4246c, #ff8eb5);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+            filter: drop-shadow(0 8px 6px #ffc0cb);
+        }
+
+        .from-name {
+            font-size: 1.5rem;
+            color: #b34167;
+            margin-top: -5px;
+            margin-bottom: 30px;
+            font-style: italic;
+            border-bottom: 3px dotted #ffa6c9;
+            display: inline-block;
+            padding-bottom: 6px;
+        }
+
+        /* BUTTON AREA — YES & NO */
+        .button-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 2.5rem;
+            margin: 2.8rem 0 2rem;
+        }
+
+        .btn {
+            border: none;
+            cursor: pointer;
+            font-weight: 700;
+            border-radius: 60px;
+            transition: all 0.25s ease;
+            box-shadow: 0 12px 0 #b3405a, 0 12px 25px rgba(200, 30, 80, 0.5);
+            font-family: inherit;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: 2px solid white;
+        }
+
+        .btn-yes {
+            background: #ff4d6d;
+            color: white;
+            font-size: 2rem;
+            padding: 1.2rem 2.8rem;
+            box-shadow: 0 12px 0 #a1334b, 0 15px 30px #ff80a5;
+            transform: scale(1);
+            border: 3px solid #ffe9f0;
+        }
+
+        .btn-no {
+            background: #b3243e;
+            color: #ffe4ec;
+            font-size: 2rem;
+            padding: 1.2rem 2.8rem;
+            background: #c13b55;
+            box-shadow: 0 12px 0 #6f1d2b, 0 12px 25px #cc7b8b;
+            border: 3px solid #ffc2c9;
+        }
+
+        .btn-yes:hover {
+            background: #ff1a4f;
+            transform: scale(1.08);
+        }
+
+        /* Spotify romance section - EXACT EMBED YOU PROVIDED */
+        .spotify-romance {
+            margin: 35px auto 25px;
+            padding: 12px;
+            background: #ffdae0;
+            border-radius: 24px;
+            display: inline-block;
+            border: 4px solid #ff779b;
+            box-shadow: 0 0 0 6px #ffb6c1;
+            width: 100%;
+            max-width: 650px;
+        }
+
+        /* exact iframe style from your code, with added pink touches */
+        iframe {
+            border-radius: 12px !important;
+            width: 100%;
+            height: 352px;
+            box-shadow: 0 12px 28px #ff5690;
+            border: 3px solid white;
+        }
+
+        /* hidden no becomes invisible */
+        .no-hidden .btn-no {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s;
+        }
+
+        /* celebration animation – after yes */
+        .celebration-active {
+            animation: popConfetti 0.8s infinite alternate;
+        }
+
+        @keyframes popConfetti {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.02); background: #ffe4f0; }
+        }
+
+        .cute-message {
+            font-size: 2rem;
+            color: #c42e5c;
+            background: #fff0f5dd;
+            padding: 20px;
+            border-radius: 70px 20px 70px 20px;
+            margin-top: 30px;
+            font-weight: bold;
+            border: 6px double #ff80a5;
+            display: none;
+        }
+
+        .cute-message.show-message {
+            display: block;
+            animation: bounceIn 0.8s;
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.1); opacity: 0; }
+            60% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        /* footer designer signature */
+        .designer-footer {
+            margin-top: 40px;
+            padding: 15px 25px;
+            background: #ffc2c9ee;
+            border-radius: 60px 60px 20px 20px;
+            color: #5e2e3c;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border: 3px solid white;
+            backdrop-filter: blur(5px);
+            width: fit-content;
+            align-self: center;
+            z-index: 15;
+            box-shadow: 0 0 0 4px #ff99aa;
+        }
+
+        .designer-footer a {
+            color: #871c44;
+            text-decoration: none;
+            border-bottom: 2px solid #ffc0cb;
+        }
+
+        .designer-footer a:hover {
+            color: #4f0a1f;
+        }
+
+        .small-note {
+            font-size: 1rem;
+            color: #7a3b46;
+            margin-top: 6px;
+        }
+
+        /* responsive */
+        @media (max-width: 700px) {
+            .proposal-text { font-size: 2rem; }
+            .proposal-name { font-size: 2.5rem; }
+            .btn { font-size: 1.6rem; padding: 1rem 2rem; }
+            iframe { height: 280px; }
+        }
+
+        /* extra pink cute touches */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.2); }
+        }
+        
+        /* shake animation for no button */
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-7px); }
+            50% { transform: translateX(7px); }
+            75% { transform: translateX(-3px); }
+            100% { transform: translateX(0); }
+        }
+    </style>
+    <!-- Google Fonts for softer vibe -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- floating pink hearts deco animation -->
+    <div class="floating-hearts" id="floatingHearts"></div>
+
+    <!-- MAIN PROPOSAL CARD -->
+    <div class="valentine-card" id="proposalCard">
+        <div>
+            <span style="font-size:5rem; line-height:1;">💗💘💖</span>
+        </div>
+        <!-- the big question -->
+        <div class="proposal-text">
+            Will you be my Valentine
+        </div>
+        <div class="proposal-name">
+            Mahlatse? 💕
+        </div>
+        <div class="from-name">
+            💌 from Tokologo Thobejane 💌
+        </div>
+
+        <!-- BUTTONS: YES / NO with special behaviour: hover No makes Yes bigger, eventually No disappears -->
+        <div class="button-section" id="buttonGroup">
+            <button class="btn btn-yes" id="yesBtn">YES 💖</button>
+            <button class="btn btn-no" id="noBtn">NO 💔</button>
+        </div>
+
+        <!-- ✅ EXACT SPOTIFY EMBED YOU REQUESTED - Limit Nala ft Nkosasana - Daughter Mahala -->
+        <div class="spotify-romance">
+            <iframe 
+                data-testid="embed-iframe" 
+                style="border-radius:12px" 
+                src="https://open.spotify.com/embed/track/564GwAZ1PayxB1OXkUPkky?utm_source=generator" 
+                width="100%" 
+                height="352" 
+                frameBorder="0" 
+                allowfullscreen="" 
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                loading="lazy">
+            </iframe>
+            <p style="color:#95234e; font-weight:bold; margin-top:12px; font-size:1.2rem;">
+                🎶 Limit Nala ft Nkosasana – Daughter Mahala 🎶 <br>
+                <span style="font-size:1rem; background:#ffb6c1; padding:5px 15px; border-radius:30px; display:inline-block; margin-top:6px;">
+                    💕 for my dearest Mahlatse 💕
+                </span>
+            </p>
+        </div>
+
+        <!-- Romantic celebration message appears after Yes click -->
+        <div class="cute-message" id="celebrationMessage">
+            💞💞 YAY! Mahlatse said YES! 💞💞 <br>
+            Tokologo loves you endlessly! 🌹🌸🌺<br>
+            <span style="font-size:3rem;">💑💋❤️</span>
+        </div>
+    </div>
+
+    <!-- DESIGNER FOOTER with contacts (Shepherd Thobejane) -->
+    <div class="designer-footer">
+        <div>💗 Designed by Shepherd Thobejane 💗</div>
+        <div class="small-note">
+            📞 0836439745  •  📧 <a href="mailto:shekgauthobs1@gmail.com">shekgauthobs1@gmail.com</a>
+        </div>
+        <div style="font-size:0.95rem; margin-top:5px;">© pink paradise for Mahlatse ✨</div>
+    </div>
+
+    <script>
+        (function() {
+            "use strict";
+
+            // ---------- generate floating hearts (pink deco) ----------
+            function createHearts() {
+                const container = document.getElementById('floatingHearts');
+                for (let i = 0; i < 40; i++) {
+                    const heart = document.createElement('div');
+                    heart.className = 'heart-float';
+                    heart.innerHTML = '💗';  // pink heart
+                    heart.style.left = Math.random() * 100 + '%';
+                    heart.style.animationDelay = Math.random() * 12 + 's';
+                    heart.style.fontSize = (Math.random() * 2.2 + 1.2) + 'rem';
+                    heart.style.opacity = Math.random() * 0.4 + 0.2;
+                    heart.style.animationDuration = (Math.random() * 8 + 6) + 's';
+                    heart.style.color = `rgb(255, ${Math.floor(150 + Math.random() * 80)}, ${Math.floor(170 + Math.random() * 85)})`;
+                    container.appendChild(heart);
+                }
+            }
+            createHearts();
+
+            // ---------- GET ELEMENTS ----------
+            const yesBtn = document.getElementById('yesBtn');
+            const noBtn = document.getElementById('noBtn');
+            const buttonGroup = document.getElementById('buttonGroup');
+            const card = document.getElementById('proposalCard');
+            const celebrationMsg = document.getElementById('celebrationMessage');
+
+            // ---------- NO BUTTON BEHAVIOUR: makes YES bigger, till NO invisible ----------
+            let yesScale = 1.0;
+            let hoverCount = 0;
+            const MAX_HOVER = 7;
+
+            function makeYesBigger() {
+                if (hoverCount >= MAX_HOVER) return;
+                hoverCount++;
+
+                // increase YES button size
+                yesScale += 0.2;
+                yesBtn.style.transform = `scale(${yesScale})`;
+                yesBtn.style.transition = 'transform 0.2s ease, background 0.2s';
+                
+                // reduce NO's opacity and shrink it
+                let noOpacity = Math.max(0, 1.0 - hoverCount * 0.17);
+                noBtn.style.opacity = noOpacity;
+                noBtn.style.transform = `scale(${Math.max(0.5, 1 - hoverCount * 0.1)})`;
+                noBtn.style.filter = `blur(${hoverCount * 0.3}px)`;
+                
+                // when opacity tiny, set pointer-events none
+                if (noOpacity <= 0.1 || hoverCount >= MAX_HOVER - 1) {
+                    noBtn.style.opacity = '0';
+                    noBtn.style.pointerEvents = 'none';
+                    buttonGroup.classList.add('no-hidden');
+                }
+            }
+
+            // Event: hover on No triggers YES to grow
+            if (noBtn) {
+                noBtn.addEventListener('mouseenter', makeYesBigger);
+                // Also on click no, act as if hover
+                noBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    makeYesBigger();
+                    noBtn.style.animation = 'shake 0.3s';
+                    setTimeout(() => { noBtn.style.animation = ''; }, 300);
+                });
+            }
+
+            // ---------- YES BUTTON CLICK: celebration animation, cute message, romantic forever ----------
+            yesBtn.addEventListener('click', function() {
+                // show the romantic message
+                celebrationMsg.classList.add('show-message');
+                
+                // add celebration animation to card
+                card.classList.add('celebration-active');
+                
+                // instantly hide No button
+                noBtn.style.opacity = '0';
+                noBtn.style.pointerEvents = 'none';
+                noBtn.style.display = 'none'; // force hide
+                buttonGroup.classList.add('no-hidden');
+                
+                // make Yes big and sparkling
+                yesBtn.style.transform = 'scale(1.8)';
+                yesBtn.style.background = '#ff1a4f';
+                yesBtn.style.boxShadow = '0 0 30px #ffb7c5, 0 15px 0 #951f3c';
+                
+                // create floating celebration hearts
+                for (let i = 0; i < 20; i++) {
+                    const heart = document.createElement('span');
+                    heart.innerHTML = '🌸💖🌸';
+                    heart.style.position = 'absolute';
+                    heart.style.left = Math.random() * 90 + '%';
+                    heart.style.top = Math.random() * 90 + '%';
+                    heart.style.fontSize = (Math.random() * 2 + 2) + 'rem';
+                    heart.style.animation = 'floatUp 2s forwards';
+                    heart.style.opacity = '0.9';
+                    heart.style.pointerEvents = 'none';
+                    card.appendChild(heart);
+                    setTimeout(() => { heart.remove(); }, 2000);
+                }
+
+                // disable further No hover effects after Yes clicked
+                noBtn.removeEventListener('mouseenter', makeYesBigger);
+                
+            }, { once: true });
+
+            // Initial cleanup
+            buttonGroup.classList.remove('no-hidden');
+        })();
+    </script>
+
+    <!-- extra pink decorative touches -->
+    <div style="position:fixed; bottom:15px; left:15px; font-size:2.2rem; opacity:0.25; z-index:20; animation: pulse 2s infinite;">💗</div>
+    <div style="position:fixed; top:15px; right:25px; font-size:3rem; opacity:0.25; z-index:20; transform:rotate(10deg); animation: pulse 2.5s infinite;">🌸</div>
+</body>
+</html>
