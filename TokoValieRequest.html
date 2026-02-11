@@ -14,7 +14,6 @@
 
         body {
             background: linear-gradient(145deg, #ffb6c1 0%, #ffc0cb 40%, #ffe4ec 100%);
-            /* PINKKKKK domination */
             font-family: 'Quicksand', 'Segoe UI', 'Comic Neue', cursive, sans-serif;
             min-height: 100vh;
             display: flex;
@@ -26,7 +25,7 @@
             overflow-x: auto;
         }
 
-        /* floating hearts + deco animation background */
+        /* floating hearts - background decoration */
         .floating-hearts {
             position: fixed;
             top: 0;
@@ -35,6 +34,9 @@
             height: 100%;
             pointer-events: none;
             z-index: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .heart-float {
@@ -50,25 +52,40 @@
             100% { transform: translateY(-10vh) scale(1.3); opacity: 0; }
         }
 
-        /* main card – all pink, glossy & cute */
+        /* main container - everything centered */
+        .main-wrapper {
+            width: 100%;
+            max-width: 1100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 10;
+            margin: 0 auto;
+        }
+
+        /* main card – all pink, glossy & cute - PERFECTLY CENTERED */
         .valentine-card {
-            background: rgba(255, 220, 240, 0.8);
+            background: rgba(255, 220, 240, 0.85);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border-radius: 60px 60px 60px 60px;
             border: 3px solid #ff99aa;
             box-shadow: 0 20px 40px rgba(255, 20, 147, 0.3), 0 0 0 8px #ffe4ec inset;
-            max-width: 1000px;
             width: 100%;
+            max-width: 950px;
             padding: 2.5rem 2rem;
-            margin: 20px 0;
+            margin: 20px auto;
             position: relative;
-            z-index: 10;
-            transition: all 0.3s ease;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
-        /* her name glam */
+        /* ALL TEXT CONTENT CENTERED */
         .proposal-text {
             font-size: 2.8rem;
             font-weight: 800;
@@ -78,6 +95,8 @@
             word-break: break-word;
             margin-bottom: 0.5rem;
             line-height: 1.2;
+            text-align: center;
+            width: 100%;
         }
 
         .proposal-name {
@@ -88,20 +107,23 @@
             color: transparent;
             display: inline-block;
             filter: drop-shadow(0 8px 6px #ffc0cb);
+            text-align: center;
+            width: 100%;
         }
 
         .from-name {
             font-size: 1.5rem;
             color: #b34167;
-            margin-top: -5px;
+            margin-top: 0;
             margin-bottom: 30px;
             font-style: italic;
             border-bottom: 3px dotted #ffa6c9;
             display: inline-block;
             padding-bottom: 6px;
+            text-align: center;
         }
 
-        /* BUTTON AREA — YES & NO */
+        /* BUTTON AREA — perfectly centered */
         .button-section {
             display: flex;
             flex-wrap: wrap;
@@ -109,6 +131,7 @@
             justify-content: center;
             gap: 2.5rem;
             margin: 2.8rem 0 2rem;
+            width: 100%;
         }
 
         .btn {
@@ -149,20 +172,22 @@
             transform: scale(1.08);
         }
 
-        /* Spotify romance section - EXACT EMBED YOU PROVIDED */
+        /* Spotify romance section - EXACT EMBED - CENTERED */
         .spotify-romance {
             margin: 35px auto 25px;
             padding: 12px;
             background: #ffdae0;
             border-radius: 24px;
-            display: inline-block;
             border: 4px solid #ff779b;
             box-shadow: 0 0 0 6px #ffb6c1;
             width: 100%;
             max-width: 650px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
-        /* exact iframe style from your code, with added pink touches */
         iframe {
             border-radius: 12px !important;
             width: 100%;
@@ -178,7 +203,7 @@
             transition: opacity 0.2s;
         }
 
-        /* celebration animation – after yes */
+        /* celebration animation */
         .celebration-active {
             animation: popConfetti 0.8s infinite alternate;
         }
@@ -194,10 +219,13 @@
             background: #fff0f5dd;
             padding: 20px;
             border-radius: 70px 20px 70px 20px;
-            margin-top: 30px;
+            margin: 30px auto 0;
             font-weight: bold;
             border: 6px double #ff80a5;
             display: none;
+            width: 90%;
+            max-width: 700px;
+            text-align: center;
         }
 
         .cute-message.show-message {
@@ -211,10 +239,10 @@
             100% { transform: scale(1); }
         }
 
-        /* footer designer signature */
+        /* footer designer signature - PERFECTLY CENTERED */
         .designer-footer {
-            margin-top: 40px;
-            padding: 15px 25px;
+            margin: 40px auto 20px;
+            padding: 15px 30px;
             background: #ffc2c9ee;
             border-radius: 60px 60px 20px 20px;
             color: #5e2e3c;
@@ -223,9 +251,13 @@
             border: 3px solid white;
             backdrop-filter: blur(5px);
             width: fit-content;
-            align-self: center;
-            z-index: 15;
+            max-width: 95%;
             box-shadow: 0 0 0 4px #ff99aa;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         .designer-footer a {
@@ -242,6 +274,7 @@
             font-size: 1rem;
             color: #7a3b46;
             margin-top: 6px;
+            text-align: center;
         }
 
         /* responsive */
@@ -250,15 +283,15 @@
             .proposal-name { font-size: 2.5rem; }
             .btn { font-size: 1.6rem; padding: 1rem 2rem; }
             iframe { height: 280px; }
+            .valentine-card { padding: 1.8rem 1.2rem; }
         }
 
-        /* extra pink cute touches */
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.2); }
+        @media (max-width: 480px) {
+            .button-section { gap: 1.2rem; }
+            .btn-yes, .btn-no { font-size: 1.4rem; padding: 0.8rem 1.5rem; }
         }
-        
-        /* shake animation for no button */
+
+        /* shake animation */
         @keyframes shake {
             0% { transform: translateX(0); }
             25% { transform: translateX(-7px); }
@@ -266,73 +299,104 @@
             75% { transform: translateX(-3px); }
             100% { transform: translateX(0); }
         }
+
+        /* extra center utility */
+        .center-xy {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        /* song caption centered */
+        .spotify-caption {
+            color: #95234e;
+            font-weight: bold;
+            margin-top: 12px;
+            font-size: 1.2rem;
+            text-align: center;
+            width: 100%;
+        }
+
+        .spotify-caption span {
+            font-size: 1rem;
+            background: #ffb6c1;
+            padding: 5px 20px;
+            border-radius: 30px;
+            display: inline-block;
+            margin-top: 6px;
+        }
     </style>
-    <!-- Google Fonts for softer vibe -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- floating pink hearts deco animation -->
+    <!-- floating pink hearts deco animation - centered background -->
     <div class="floating-hearts" id="floatingHearts"></div>
 
-    <!-- MAIN PROPOSAL CARD -->
-    <div class="valentine-card" id="proposalCard">
-        <div>
-            <span style="font-size:5rem; line-height:1;">💗💘💖</span>
-        </div>
-        <!-- the big question -->
-        <div class="proposal-text">
-            Will you be my Valentine
-        </div>
-        <div class="proposal-name">
-            Mahlatse? 💕
-        </div>
-        <div class="from-name">
-            💌 from Tokologo Thobejane 💌
+    <!-- MAIN WRAPPER - EVERYTHING CENTERED -->
+    <div class="main-wrapper">
+
+        <!-- MAIN PROPOSAL CARD - PERFECTLY CENTERED -->
+        <div class="valentine-card" id="proposalCard">
+            
+            <!-- top hearts - centered -->
+            <div style="font-size:5rem; line-height:1; text-align:center; width:100%;">💗💘💖</div>
+            
+            <!-- proposal text - centered -->
+            <div class="proposal-text">
+                Will you be my Valentine
+            </div>
+            <div class="proposal-name">
+                Mahlatse? 💕
+            </div>
+            <div class="from-name">
+                💌 from Tokologo Thobejane 💌
+            </div>
+
+            <!-- BUTTONS - perfectly centered -->
+            <div class="button-section" id="buttonGroup">
+                <button class="btn btn-yes" id="yesBtn">YES 💖</button>
+                <button class="btn btn-no" id="noBtn">NO 💔</button>
+            </div>
+
+            <!-- ✅ EXACT SPOTIFY EMBED - CENTERED -->
+            <div class="spotify-romance">
+                <iframe 
+                    data-testid="embed-iframe" 
+                    style="border-radius:12px" 
+                    src="https://open.spotify.com/embed/track/564GwAZ1PayxB1OXkUPkky?utm_source=generator" 
+                    width="100%" 
+                    height="352" 
+                    frameBorder="0" 
+                    allowfullscreen="" 
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                    loading="lazy">
+                </iframe>
+                <div class="spotify-caption">
+                    🎶 Limit Nala ft Nkosasana – Daughter Mahala 🎶 <br>
+                    <span>💕 for my dearest Mahlatse 💕</span>
+                </div>
+            </div>
+
+            <!-- Romantic celebration message - centered -->
+            <div class="cute-message" id="celebrationMessage">
+                💞💞 YAY! Mahlatse said YES! 💞💞 <br>
+                Tokologo loves you endlessly! 🌹🌸🌺<br>
+                <span style="font-size:3rem;">💑💋❤️</span>
+            </div>
         </div>
 
-        <!-- BUTTONS: YES / NO with special behaviour: hover No makes Yes bigger, eventually No disappears -->
-        <div class="button-section" id="buttonGroup">
-            <button class="btn btn-yes" id="yesBtn">YES 💖</button>
-            <button class="btn btn-no" id="noBtn">NO 💔</button>
+        <!-- DESIGNER FOOTER - PERFECTLY CENTERED -->
+        <div class="designer-footer">
+            <div>💗 Designed by Shepherd Thobejane 💗</div>
+            <div class="small-note">
+                📞 0836439745  •  📧 <a href="mailto:shekgauthobs1@gmail.com">shekgauthobs1@gmail.com</a>
+            </div>
+            <div style="font-size:0.95rem; margin-top:5px; text-align:center;">© pink paradise for Mahlatse ✨</div>
         </div>
-
-        <!-- ✅ EXACT SPOTIFY EMBED YOU REQUESTED - Limit Nala ft Nkosasana - Daughter Mahala -->
-        <div class="spotify-romance">
-            <iframe 
-                data-testid="embed-iframe" 
-                style="border-radius:12px" 
-                src="https://open.spotify.com/embed/track/564GwAZ1PayxB1OXkUPkky?utm_source=generator" 
-                width="100%" 
-                height="352" 
-                frameBorder="0" 
-                allowfullscreen="" 
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                loading="lazy">
-            </iframe>
-            <p style="color:#95234e; font-weight:bold; margin-top:12px; font-size:1.2rem;">
-                🎶 Limit Nala ft Nkosasana – Daughter Mahala 🎶 <br>
-                <span style="font-size:1rem; background:#ffb6c1; padding:5px 15px; border-radius:30px; display:inline-block; margin-top:6px;">
-                    💕 for my dearest Mahlatse 💕
-                </span>
-            </p>
-        </div>
-
-        <!-- Romantic celebration message appears after Yes click -->
-        <div class="cute-message" id="celebrationMessage">
-            💞💞 YAY! Mahlatse said YES! 💞💞 <br>
-            Tokologo loves you endlessly! 🌹🌸🌺<br>
-            <span style="font-size:3rem;">💑💋❤️</span>
-        </div>
-    </div>
-
-    <!-- DESIGNER FOOTER with contacts (Shepherd Thobejane) -->
-    <div class="designer-footer">
-        <div>💗 Designed by Shepherd Thobejane 💗</div>
-        <div class="small-note">
-            📞 0836439745  •  📧 <a href="mailto:shekgauthobs1@gmail.com">shekgauthobs1@gmail.com</a>
-        </div>
-        <div style="font-size:0.95rem; margin-top:5px;">© pink paradise for Mahlatse ✨</div>
     </div>
 
     <script>
@@ -345,7 +409,7 @@
                 for (let i = 0; i < 40; i++) {
                     const heart = document.createElement('div');
                     heart.className = 'heart-float';
-                    heart.innerHTML = '💗';  // pink heart
+                    heart.innerHTML = '💗';
                     heart.style.left = Math.random() * 100 + '%';
                     heart.style.animationDelay = Math.random() * 12 + 's';
                     heart.style.fontSize = (Math.random() * 2.2 + 1.2) + 'rem';
@@ -373,18 +437,15 @@
                 if (hoverCount >= MAX_HOVER) return;
                 hoverCount++;
 
-                // increase YES button size
                 yesScale += 0.2;
                 yesBtn.style.transform = `scale(${yesScale})`;
                 yesBtn.style.transition = 'transform 0.2s ease, background 0.2s';
                 
-                // reduce NO's opacity and shrink it
                 let noOpacity = Math.max(0, 1.0 - hoverCount * 0.17);
                 noBtn.style.opacity = noOpacity;
                 noBtn.style.transform = `scale(${Math.max(0.5, 1 - hoverCount * 0.1)})`;
                 noBtn.style.filter = `blur(${hoverCount * 0.3}px)`;
                 
-                // when opacity tiny, set pointer-events none
                 if (noOpacity <= 0.1 || hoverCount >= MAX_HOVER - 1) {
                     noBtn.style.opacity = '0';
                     noBtn.style.pointerEvents = 'none';
@@ -392,10 +453,8 @@
                 }
             }
 
-            // Event: hover on No triggers YES to grow
             if (noBtn) {
                 noBtn.addEventListener('mouseenter', makeYesBigger);
-                // Also on click no, act as if hover
                 noBtn.addEventListener('click', function(e) {
                     e.preventDefault();
                     makeYesBigger();
@@ -404,26 +463,20 @@
                 });
             }
 
-            // ---------- YES BUTTON CLICK: celebration animation, cute message, romantic forever ----------
+            // ---------- YES BUTTON CLICK: celebration ----------
             yesBtn.addEventListener('click', function() {
-                // show the romantic message
                 celebrationMsg.classList.add('show-message');
-                
-                // add celebration animation to card
                 card.classList.add('celebration-active');
                 
-                // instantly hide No button
                 noBtn.style.opacity = '0';
                 noBtn.style.pointerEvents = 'none';
-                noBtn.style.display = 'none'; // force hide
+                noBtn.style.display = 'none';
                 buttonGroup.classList.add('no-hidden');
                 
-                // make Yes big and sparkling
                 yesBtn.style.transform = 'scale(1.8)';
                 yesBtn.style.background = '#ff1a4f';
                 yesBtn.style.boxShadow = '0 0 30px #ffb7c5, 0 15px 0 #951f3c';
                 
-                // create floating celebration hearts
                 for (let i = 0; i < 20; i++) {
                     const heart = document.createElement('span');
                     heart.innerHTML = '🌸💖🌸';
@@ -438,18 +491,32 @@
                     setTimeout(() => { heart.remove(); }, 2000);
                 }
 
-                // disable further No hover effects after Yes clicked
                 noBtn.removeEventListener('mouseenter', makeYesBigger);
-                
             }, { once: true });
 
-            // Initial cleanup
             buttonGroup.classList.remove('no-hidden');
         })();
     </script>
 
-    <!-- extra pink decorative touches -->
-    <div style="position:fixed; bottom:15px; left:15px; font-size:2.2rem; opacity:0.25; z-index:20; animation: pulse 2s infinite;">💗</div>
-    <div style="position:fixed; top:15px; right:25px; font-size:3rem; opacity:0.25; z-index:20; transform:rotate(10deg); animation: pulse 2.5s infinite;">🌸</div>
+    <!-- decorative elements - perfectly positioned -->
+    <div style="position:fixed; bottom:20px; left:20px; font-size:2.2rem; opacity:0.2; z-index:20; animation: pulse 2s infinite;">💗</div>
+    <div style="position:fixed; top:20px; right:25px; font-size:3rem; opacity:0.2; z-index:20; transform:rotate(10deg); animation: pulse 2.5s infinite;">🌸</div>
+    
+    <style>
+        /* pulse animation for decorations */
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.2; }
+            50% { transform: scale(1.1); opacity: 0.3; }
+            100% { transform: scale(1); opacity: 0.2; }
+        }
+        /* ensure everything is centered */
+        .main-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+    </style>
 </body>
 </html>
