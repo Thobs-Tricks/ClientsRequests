@@ -173,8 +173,10 @@
             margin: 35px auto 25px;
             padding: 0; /* NO PADDING - exact fit */
             background: transparent; /* no background, let iframe shine */
-            border: none; /* no border */
-            box-shadow: none; /* no shadow */
+            border-radius: 12px;
+            border: 3px solid white;
+            box-shadow: 0 12px 28px #ff5690;
+            overflow: hidden;
             width: 100%;
             max-width: 650px;
             display: flex;
@@ -185,11 +187,9 @@
 
         /* iframe styling - all visual effects directly on iframe */
         iframe {
-            border-radius: 12px !important;
-            width: 100%;
-            box-shadow: 0 12px 28px #ff5690; /* shadow on iframe itself */
-            border: 3px solid white; /* border on iframe itself */
-            transition: all 0.2s ease;
+             display: block;
+             width: 100%;
+             border: none;
         }
 
         /* optional hover effect */
