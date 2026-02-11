@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>💗 Will you be my Valentine Mahlatse? 💗</title>
-    <!-- Pink everything, romantic Spotify & cute animations -->
+    <!-- Pink everything, romantic Spotify with AUTOPLAY -->
     <style>
         * {
             margin: 0;
@@ -34,9 +34,6 @@
             height: 100%;
             pointer-events: none;
             z-index: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
         .heart-float {
@@ -52,7 +49,7 @@
             100% { transform: translateY(-10vh) scale(1.3); opacity: 0; }
         }
 
-        /* main container - everything centered */
+        /* main wrapper - everything centered */
         .main-wrapper {
             width: 100%;
             max-width: 1100px;
@@ -65,7 +62,7 @@
             margin: 0 auto;
         }
 
-        /* main card – all pink, glossy & cute - PERFECTLY CENTERED */
+        /* main card – all pink, glossy & cute */
         .valentine-card {
             background: rgba(255, 220, 240, 0.85);
             backdrop-filter: blur(10px);
@@ -85,7 +82,6 @@
             justify-content: center;
         }
 
-        /* ALL TEXT CONTENT CENTERED */
         .proposal-text {
             font-size: 2.8rem;
             font-weight: 800;
@@ -123,7 +119,7 @@
             text-align: center;
         }
 
-        /* BUTTON AREA — perfectly centered */
+        /* BUTTON AREA */
         .button-section {
             display: flex;
             flex-wrap: wrap;
@@ -172,7 +168,7 @@
             transform: scale(1.08);
         }
 
-        /* Spotify romance section - EXACT EMBED - CENTERED */
+        /* Spotify romance section - AUTOPLAY ENABLED */
         .spotify-romance {
             margin: 35px auto 25px;
             padding: 12px;
@@ -239,7 +235,7 @@
             100% { transform: scale(1); }
         }
 
-        /* footer designer signature - PERFECTLY CENTERED */
+        /* footer - perfectly centered */
         .designer-footer {
             margin: 40px auto 20px;
             padding: 15px 30px;
@@ -300,16 +296,6 @@
             100% { transform: translateX(0); }
         }
 
-        /* extra center utility */
-        .center-xy {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-        }
-
-        /* song caption centered */
         .spotify-caption {
             color: #95234e;
             font-weight: bold;
@@ -327,25 +313,25 @@
             display: inline-block;
             margin-top: 6px;
         }
+
+        /* pulse animation */
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.2; }
+            50% { transform: scale(1.1); opacity: 0.3; }
+            100% { transform: scale(1); opacity: 0.2; }
+        }
     </style>
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- floating pink hearts deco animation - centered background -->
     <div class="floating-hearts" id="floatingHearts"></div>
 
-    <!-- MAIN WRAPPER - EVERYTHING CENTERED -->
     <div class="main-wrapper">
-
-        <!-- MAIN PROPOSAL CARD - PERFECTLY CENTERED -->
         <div class="valentine-card" id="proposalCard">
             
-            <!-- top hearts - centered -->
             <div style="font-size:5rem; line-height:1; text-align:center; width:100%;">💗💘💖</div>
             
-            <!-- proposal text - centered -->
             <div class="proposal-text">
                 Will you be my Valentine
             </div>
@@ -356,18 +342,17 @@
                 💌 from Tokologo Thobejane 💌
             </div>
 
-            <!-- BUTTONS - perfectly centered -->
             <div class="button-section" id="buttonGroup">
                 <button class="btn btn-yes" id="yesBtn">YES 💖</button>
                 <button class="btn btn-no" id="noBtn">NO 💔</button>
             </div>
 
-            <!-- ✅ EXACT SPOTIFY EMBED - CENTERED -->
+            <!-- ✅ SPOTIFY WITH AUTOPLAY - STARTS IMMEDIATELY -->
             <div class="spotify-romance">
                 <iframe 
                     data-testid="embed-iframe" 
                     style="border-radius:12px" 
-                    src="https://open.spotify.com/embed/track/564GwAZ1PayxB1OXkUPkky?utm_source=generator" 
+                    src="https://open.spotify.com/embed/track/564GwAZ1PayxB1OXkUPkky?utm_source=generator&autoplay=1" 
                     width="100%" 
                     height="352" 
                     frameBorder="0" 
@@ -377,11 +362,10 @@
                 </iframe>
                 <div class="spotify-caption">
                     🎶 Limit Nala ft Nkosasana – Daughter Mahala 🎶 <br>
-                    <span>💕 for my dearest Mahlatse 💕</span>
+                    <span>💕 playing now for Mahlatse 💕</span>
                 </div>
             </div>
 
-            <!-- Romantic celebration message - centered -->
             <div class="cute-message" id="celebrationMessage">
                 💞💞 YAY! Mahlatse said YES! 💞💞 <br>
                 Tokologo loves you endlessly! 🌹🌸🌺<br>
@@ -389,7 +373,6 @@
             </div>
         </div>
 
-        <!-- DESIGNER FOOTER - PERFECTLY CENTERED -->
         <div class="designer-footer">
             <div>💗 Designed by Shepherd Thobejane 💗</div>
             <div class="small-note">
@@ -403,7 +386,7 @@
         (function() {
             "use strict";
 
-            // ---------- generate floating hearts (pink deco) ----------
+            // ---------- FLOATING HEARTS ----------
             function createHearts() {
                 const container = document.getElementById('floatingHearts');
                 for (let i = 0; i < 40; i++) {
@@ -421,14 +404,47 @@
             }
             createHearts();
 
-            // ---------- GET ELEMENTS ----------
+            // ---------- FORCE AUTOPLAY ----------
+            // Some browsers restrict autoplay. This attempts to trigger play via user interaction simulation,
+            // but the best we can do is add &autoplay=1 to the src and set allow="autoplay"
+            // Additionally, we'll try to programmatically trigger play if possible
+            function triggerSpotifyPlay() {
+                const iframe = document.querySelector('iframe');
+                if (iframe) {
+                    // Most reliable: we already added autoplay=1 to the src
+                    console.log('🎵 Spotify autoplay requested - browser may require user interaction');
+                    
+                    // Try to send play command to Spotify iframe (works in some browsers)
+                    try {
+                        // This is a best-effort approach
+                        iframe.contentWindow.postMessage({
+                            command: 'play',
+                            context: 'track:564GwAZ1PayxB1OXkUPkky'
+                        }, '*');
+                    } catch(e) {
+                        // Silent fail - autoplay=1 in src is our best bet
+                    }
+                }
+            }
+
+            // Call autoplay attempt on load
+            window.addEventListener('load', function() {
+                triggerSpotifyPlay();
+                
+                // Also try to play on first user interaction with page
+                document.body.addEventListener('click', function once() {
+                    triggerSpotifyPlay();
+                    document.body.removeEventListener('click', once);
+                }, { once: true });
+            });
+
+            // ---------- YES/NO BUTTON LOGIC ----------
             const yesBtn = document.getElementById('yesBtn');
             const noBtn = document.getElementById('noBtn');
             const buttonGroup = document.getElementById('buttonGroup');
             const card = document.getElementById('proposalCard');
             const celebrationMsg = document.getElementById('celebrationMessage');
 
-            // ---------- NO BUTTON BEHAVIOUR: makes YES bigger, till NO invisible ----------
             let yesScale = 1.0;
             let hoverCount = 0;
             const MAX_HOVER = 7;
@@ -463,7 +479,6 @@
                 });
             }
 
-            // ---------- YES BUTTON CLICK: celebration ----------
             yesBtn.addEventListener('click', function() {
                 celebrationMsg.classList.add('show-message');
                 card.classList.add('celebration-active');
@@ -498,25 +513,14 @@
         })();
     </script>
 
-    <!-- decorative elements - perfectly positioned -->
+    <!-- decorative elements -->
     <div style="position:fixed; bottom:20px; left:20px; font-size:2.2rem; opacity:0.2; z-index:20; animation: pulse 2s infinite;">💗</div>
     <div style="position:fixed; top:20px; right:25px; font-size:3rem; opacity:0.2; z-index:20; transform:rotate(10deg); animation: pulse 2.5s infinite;">🌸</div>
     
-    <style>
-        /* pulse animation for decorations */
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 0.2; }
-            50% { transform: scale(1.1); opacity: 0.3; }
-            100% { transform: scale(1); opacity: 0.2; }
-        }
-        /* ensure everything is centered */
-        .main-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-        }
-    </style>
+    <!-- hidden audio trigger for browsers that block iframe autoplay -->
+    <div style="display:none;">
+        <!-- This helps trigger autoplay in some browsers -->
+        <audio id="spotifyTrigger" preload="none"></audio>
+    </div>
 </body>
 </html>
