@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for Keabetswe 💜🩷🖤</title>
+    <!-- Purple · Pink · Black · White · romantic maximalism -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', 'Segoe UI', 'Georgia', cursive, sans-serif;
+            background: radial-gradient(circle at 20% 30%, #1a0f1e, #0b0b0f);
+            /* deep black-violet dream */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.2rem;
+            position: relative;
+            overflow-x: hidden;
+            color: #f5e6f0;
+        }
+
+        /* ---------- FLOATING ELEVATION: PURPLE + PINK DREAMS ---------- */
+        .floating-collection {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .float-item {
+            position: absolute;
+            font-size: 2.8rem;
+            opacity: 0.1;
+            animation: levitate 22s infinite alternate ease-in-out;
+            color: #d9b0ff;
+            text-shadow: 0 0 15px #ff99cc;
+        }
+
+        .float-item:nth-child(even) {
+            color: #ffb3d9;
+            opacity: 0.13;
+            animation-duration: 19s;
+        }
+
+        @keyframes levitate {
+            0% { transform: translateY(0px) rotate(0deg) scale(0.9); }
+            100% { transform: translateY(-60px) rotate(12deg) scale(1.2); }
+        }
+
+        /* ---------- MAIN WRAPPER: PAGES STACK ---------- */
+        .book {
+            position: relative;
+            z-index: 30;
+            width: 100%;
+            max-width: 760px;
+            min-height: 620px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 1.5rem auto;
+        }
+
+        /* every "page" is a card – purple black white pink */
+        .page {
+            background: rgba(25, 15, 30, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 2px solid #b284c0;
+            box-shadow: 0 0 0 2px #2d1b2e, 0 20px 40px #00000080, 0 0 30px #c77dff66;
+            border-radius: 48px 48px 48px 48px;
+            padding: 2.4rem 2rem;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+            color: white;
+            position: relative;
+        }
+
+        .page h1, .page h2 {
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-align: center;
+        }
+
+        /* active page = show, others hidden */
+        .page:not(.active-page) {
+            display: none;
+        }
+
+        .active-page {
+            display: flex;
+            animation: pageRise 0.7s ease;
+        }
+
+        @keyframes pageRise {
+            0% { opacity: 0; transform: scale(0.92) translateY(20px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        /* ---------- TYPOGRAPHY / PURPLE-PINK GLOW ---------- */
+        .name-glow {
+            font-size: 3.3rem;
+            font-weight: 900;
+            background: linear-gradient(145deg, #f7c0e6, #e9b6ff, #d6a2ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 22px #ff99cc, 0 0 45px #aa80ff, 2px 4px 8px black;
+            margin-bottom: 0.4rem;
+        }
+
+        .from-name {
+            font-size: 1.7rem;
+            color: #ffd9f0;
+            text-shadow: 2px 2px 0 #4a235a, 5px 5px 15px black;
+            border-bottom: 3px double #ffb3d9;
+            border-top: 3px double #bf7fd9;
+            display: inline-block;
+            padding: 0.6rem 2rem;
+            margin: 1.2rem 0;
+            font-style: italic;
+            background: #1e0f1e80;
+            border-radius: 80px;
+        }
+
+        .romantic-message {
+            font-size: 1.3rem;
+            color: #ffe5f0;
+            background: linear-gradient(145deg, #321d38e0, #1e1326e0);
+            padding: 1.6rem;
+            border-radius: 70px 20px 70px 20px;
+            border: 2px solid white;
+            border-right-color: #d896ff;
+            border-bottom-color: #ffaad4;
+            margin: 1.3rem 0;
+            text-align: center;
+            box-shadow: 0 10px 20px black;
+            width: 100%;
+        }
+
+        /* ---------- BUTTONS: BLACK & WHITE, PURPLE ACCENTS ---------- */
+        .btn-panel {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0 1rem;
+            width: 100%;
+        }
+
+        .btn {
+            border: none;
+            font-weight: 800;
+            border-radius: 120px;
+            padding: 1.2rem 2.8rem;
+            font-size: 1.9rem;
+            letter-spacing: 3px;
+            transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 15px 0 #1f1f2e, 0 15px 30px black;
+            border: 2px solid white;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .btn-yes {
+            background: #2e1b3c; /* deep purple-black */
+            color: #ffe6f0;
+            border: 2px solid #f3b3ff;
+            box-shadow: 0 12px 0 #1a0e24, 0 15px 35px #d9b0ff;
+        }
+
+        .btn-yes:hover {
+            background: #48245e;
+            border-color: #ffd9f0;
+            transform: scale(1.07) translateY(-3px);
+            box-shadow: 0 10px 0 #1a0e24, 0 22px 45px #e6b3ff;
+        }
+
+        .btn-no {
+            background: #2a2028; /* blackish gray */
+            color: #ffe0f0;
+            border: 2px solid #ffafd0;
+            box-shadow: 0 12px 0 #1b1217, 0 15px 35px #3e2b36;
+        }
+
+        .btn-no:hover {
+            background: #3e2e3a;
+            border-color: #ffcce0;
+        }
+
+        /* ----- NO VANISH / YES GROWS (BUTTON LOGIC) ----- */
+        .btn-no-diminished {
+            opacity: 0.3;
+            transform: scale(0.7);
+            pointer-events: none;
+            filter: blur(1.2px);
+            transition: all 0.25s;
+        }
+
+        .btn-no-hidden {
+            display: none !important;
+        }
+
+        .btn-yes-grow {
+            transition: transform 0.2s;
+        }
+
+        /* ---------- SPOTIFY: PERFECT FIT (height 152px) ---------- */
+        .spotify-perfect {
+            width: 100%;
+            max-width: 550px;
+            margin: 1.8rem auto;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 0 0 3px #b380cc, 0 18px 35px #000, 0 0 30px #c084fc;
+            background: transparent;
+            line-height: 0;
+        }
+
+        iframe {
+            display: block;
+            border-radius: 16px !important;
+            width: 100%;
+            height: 152px; /* exactly as given */
+            border: none;
+        }
+
+        /* ---------- PAGE 2: FLOWER GARDEN, SECRET NOTE ---------- */
+        .page-2 {
+            background: rgba(25, 12, 30, 0.8);
+            border-color: #c481d9;
+        }
+
+        .small-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            justify-content: center;
+            margin: 1.5rem 0;
+        }
+
+        .polaroid {
+            background: #1d1422;
+            padding: 0.7rem 0.7rem 1.2rem;
+            border-radius: 16px;
+            border: 2px solid #ffb3d9;
+            box-shadow: 0 12px 0 #0a070c, 0 15px 25px black;
+            color: #ffddf4;
+            font-weight: 600;
+            transform: rotate(-1deg);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .polaroid span {
+            font-size: 3rem;
+        }
+
+        .signature-box {
+            background: #2b1b33;
+            padding: 1.4rem;
+            border-radius: 36px;
+            margin-top: 1.8rem;
+            border: 2px solid #ffafd0;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* ---------- PAGE 3: THE GRAND YES (CELEBRATION) ---------- */
+        .page-celebration {
+            background: radial-gradient(circle at 30% 30%, #28172e, #120b16);
+            border: 3px solid #e6b3ff;
+            border-right-color: #ff99bb;
+            border-bottom-color: #d9a3ff;
+        }
+
+        .confetti-custom {
+            font-size: 2.6rem;
+            animation: spark 1.8s infinite;
+        }
+
+        @keyframes spark {
+            0% { text-shadow: 0 0 5px #ffb3d9; }
+            100% { text-shadow: 0 0 30px #bf7fd9, 0 0 20px #ffaad4; }
+        }
+
+        /* ---------- FOOTER / DESIGNER CREDIT (purple-pink-black-white) ---------- */
+        .designer-credit {
+            margin-top: 2rem;
+            padding: 1.1rem 2rem;
+            background: #1e1528e6;
+            border: 2px solid #d9a3ff;
+            border-radius: 80px;
+            color: #ffe6fc;
+            backdrop-filter: blur(10px);
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: inline-flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            box-shadow: 0 0 0 2px black, 0 0 0 4px #b284c0, 0 15px 25px black;
+            width: fit-content;
+            max-width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        .designer-credit a {
+            color: #ffbfe0;
+            text-decoration: none;
+            border-bottom: 2px solid #c48fd9;
+            margin: 0 5px;
+            font-weight: 700;
+        }
+
+        .designer-credit a:hover {
+            color: white;
+            border-bottom: 3px solid #ffcce6;
+            background: #4a2c54;
+            padding: 0 6px;
+            border-radius: 30px;
+        }
+
+        /* ---------- UTILITIES: CENTER EVERYTHING ---------- */
+        .center-absolute {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .nav-dots {
+            display: flex;
+            gap: 1.5rem;
+            margin: 2rem 0 1.2rem;
+        }
+
+        .dot {
+            width: 18px;
+            height: 18px;
+            background: #a970b0;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 0 15px #f3b3ff;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .dot.active-dot {
+            background: #ff99cc;
+            transform: scale(1.5);
+            box-shadow: 0 0 25px #ffb3d9;
+            border: 2px solid white;
+        }
+
+        hr {
+            border: 2px solid #b284c0;
+            width: 80%;
+            margin: 1.8rem 0;
+        }
+
+        @media (max-width: 550px) {
+            .page { padding: 1.8rem 1.2rem; }
+            .name-glow { font-size: 2.5rem; }
+        }
+    </style>
+    <!-- Google Fonts for elegance -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- FLOATING DREAMS: purple, pink, white, black accents -->
+<div class="floating-collection">
+    <div class="float-item" style="top: 5%; left: 2%;">🩷</div>
+    <div class="float-item" style="top: 15%; right: 1%;">💜</div>
+    <div class="float-item" style="bottom: 30%; left: 6%;">🖤</div>
+    <div class="float-item" style="bottom: 10%; right: 12%;">🤍</div>
+    <div class="float-item" style="top: 45%; left: 15%;">🌸</div>
+    <div class="float-item" style="top: 70%; right: 8%;">✨</div>
+    <div class="float-item" style="top: 80%; left: 20%;">💟</div>
+    <div class="float-item" style="top: 20%; left: 25%;">🌷</div>
+    <div class="float-item" style="top: 50%; right: 18%;">💕</div>
+    <div class="float-item" style="bottom: 15%; left: 30%;">🦄</div>
+</div>
+
+<!-- ========== PAGES IN A "BOOK" ========== -->
+<div class="book" id="bookContainer">
+
+    <!-- ---------- PAGE 1: PROPOSAL / THE QUESTION ---------- -->
+    <div class="page active-page" id="page1">
+        <h1 style="font-size: 2.8rem; color: #ffcaf0; text-shadow: 2px 2px 0 #5e2a6b, 5px 5px 15px black;">💜🩷  WILL YOU BE  🩷💜</h1>
+        <div class="name-glow">My Valentine?</div>
+        <div style="font-size: 2.5rem; color: #ffe3f0; margin-top: -5px;">🌹✨</div>
+        
+        <span class="from-name">To: Keabetswe Thobejane 💌</span>
+        
+        <div class="romantic-message">
+            “In a world of black & white, you are my purple twilight, my pink dawn.” <br>
+            <span style="font-size: 2rem;">🖤🤍💜🩷</span>
+        </div>
+
+        <!-- SPOTIFY: AUTOPLAY (exact embed, height 152px) -->
+        <div class="spotify-perfect">
+            <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/0Azf3U8BVU8rv2pSCnjSoB?utm_source=generator&autoplay=1&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+
+        <!-- YES / NO with classic trap: NO makes YES bigger, then NO vanishes -->
+        <div class="btn-panel" id="buttonGroup">
+            <button class="btn btn-yes" id="yesBtn">YES 🩷</button>
+            <button class="btn btn-no" id="noBtn">NO 🖤</button>
+        </div>
+
+        <div style="margin-top: 1.5rem; color: #e6c3ff; font-size: 1.2rem; font-style: italic;">
+        </div>
+    </div>
+
+    <!-- ---------- PAGE 2: A CREATIVE SECRET GARDEN / NOTES & MEMORIES ---------- -->
+    <div class="page page-2" id="page2">
+        <h2 style="color: #f6d0ff; font-size: 2.6rem; text-shadow: 3px 3px 0 #38203f;">🩷💜 little things 💜🩷</h2>
+        <div class="small-gallery">
+            <div class="polaroid"><span>🖤🤍</span> elegance</div>
+            <div class="polaroid"><span>💜🩷</span> our palette</div>
+            <div class="polaroid"><span>🌸🌺</span> for Keabetswe</div>
+        </div>
+        <div style="color: #fbe4ff; font-size:1.4rem; margin:0.8rem 0; background: #2d1d33; padding: 0.9rem; border-radius: 50px; border: 2px solid #ffaad4;">
+            ✨ purple skies, pink whispers, black velvet, white lace ✨
+        </div>
+        <div class="signature-box">
+            <span style="font-size: 2.2rem;">💌</span><br>
+            <span style="font-size:1.5rem; color:#ffd0e6;">from Tenny, with all my heart</span>
+            <div style="margin-top: 0.8rem; color: #dbb4ff;">“you are my favorite color”</div>
+        </div>
+        <div style="margin-top: 1.8rem;">
+            <span style="background: #3d2a44; padding: 0.8rem 1.8rem; border-radius: 50px; border: 2px solid white;">🌷 page 2/3 · almost there 🌷</span>
+        </div>
+    </div>
+
+    <!-- ---------- PAGE 3: THE GRAND YES (CELEBRATION / JOY) ---------- -->
+    <div class="page page-celebration" id="page3">
+        <div style="font-size: 4.5rem; line-height: 1; animation: spark 1.4s infinite;">💜🩷💜</div>
+        <h1 style="color: #ffdbee; font-size: 2.8rem; text-shadow: 0 0 25px #bf7fd9;">YES!</h1>
+        <div style="font-size: 2rem; background: #2a1a30; padding: 1.6rem; border-radius: 80px; border: 4px double #ffb3d9;">
+            <span style="color: #ffe0f0;">Keabetswe, you said yes! 💕</span>
+        </div>
+        <div class="romantic-message" style="background: #281e30;">
+            🌟 Tonight, the stars spell your name. <br>
+            Thank you for choosing me. <br>
+            <span style="font-size: 2.5rem;">🖤🤍💜🩷</span>
+        </div>
+        <!-- another spotify moment, same romantic song -->
+        <div class="spotify-perfect" style="margin-top: 1.2rem;">
+            <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/0Azf3U8BVU8rv2pSCnjSoB?utm_source=generator&autoplay=1&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+        <div class="confetti-custom" style="margin-top: 0.8rem;">🩷 💜 🖤 🤍 🩷 💜</div>
+    </div>
+
+    <!-- navigation dots (page indicator + interactive) -->
+    <div class="nav-dots">
+        <div class="dot active-dot" onclick="switchPage(1)"></div>
+        <div class="dot" onclick="switchPage(2)"></div>
+        <div class="dot" onclick="switchPage(3)"></div>
+    </div>
+
+    <!-- ========== DESIGNER CREDIT (shepherd) exactly as requested ========= -->
+    <div class="designer-credit">
+        <span>👑 Designed by Shepherd Thobejane</span>
+        <span>📞 <a href="tel:0836439745">0836439745</a></span>
+        <span>📧 <a href="mailto:shekgauthobs1@gmail.com">shekgauthobs1@gmail.com</a></span>
+        <span style="font-size:1rem; color:#ffcce6;">© purple·pink magic</span>
+    </div>
+</div>
+
+<script>
+    (function() {
+        "use strict";
+
+        // ----- PAGE SWITCHING (creative multi-page) -----
+        window.switchPage = function(pageNumber) {
+            const pages = [document.getElementById('page1'), document.getElementById('page2'), document.getElementById('page3')];
+            const dots = document.querySelectorAll('.dot');
+            
+            pages.forEach((p, idx) => {
+                if (idx === pageNumber - 1) {
+                    p.classList.add('active-page');
+                } else {
+                    p.classList.remove('active-page');
+                }
+            });
+
+            dots.forEach((dot, idx) => {
+                if (idx === pageNumber - 1) {
+                    dot.classList.add('active-dot');
+                } else {
+                    dot.classList.remove('active-dot');
+                }
+            });
+
+            // if page 3 (celebration) is opened via dot, also simulate yes celebration
+            if (pageNumber === 3) {
+                // ensure no button hidden? and yes big
+                if (noBtn) noBtn.style.opacity = '0'; noBtn.style.pointerEvents = 'none'; noBtn.classList.add('btn-no-hidden');
+                if (yesBtn) yesBtn.style.transform = 'scale(2)';
+                // also maybe add confetti effect
+                createConfettiCelebration();
+            }
+        };
+
+        // ---------- YES / NO INTERACTION (NO makes YES bigger, NO fades) ----------
+        const yesBtn = document.getElementById('yesBtn');
+        const noBtn = document.getElementById('noBtn');
+        const buttonGroup = document.getElementById('buttonGroup');
+        let noClickCount = 0;
+
+        function handleNo() {
+            if (!noBtn || !yesBtn) return;
+            if (noClickCount >= 6) {
+                noBtn.style.opacity = '0';
+                noBtn.style.pointerEvents = 'none';
+                noBtn.classList.add('btn-no-hidden');
+                return;
+            }
+
+            noClickCount++;
+            
+            // YES grows exponentially 
+            let scale = 1 + (noClickCount * 0.25);
+            yesBtn.style.transform = `scale(${scale})`;
+            yesBtn.style.transition = 'transform 0.2s ease, background 0.2s';
+            yesBtn.style.boxShadow = `0 12px 0 #1a0e24, 0 20px 45px #d9b0ff`;
+
+            // NO shrinks, fades
+            let noScale = Math.max(0.4, 1 - (noClickCount * 0.14));
+            noBtn.style.transform = `scale(${noScale})`;
+            noBtn.style.opacity = Math.max(0, 1 - noClickCount * 0.18);
+            noBtn.style.filter = `blur(${noClickCount * 0.2}px)`;
+            
+            // random drift – poetic
+            noBtn.style.position = 'relative';
+            noBtn.style.left = (Math.random() * 40 - 20) + 'px';
+            noBtn.style.top = (Math.random() * 30 - 15) + 'px';
+
+            if (noClickCount >= 5) {
+                noBtn.style.opacity = '0';
+                noBtn.style.pointerEvents = 'none';
+                noBtn.classList.add('btn-no-hidden');
+            }
+        }
+
+        // add event listeners
+        if (noBtn) {
+            noBtn.addEventListener('mouseenter', handleNo);
+            noBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                handleNo();
+            });
+        }
+
+        // ---------- YES BUTTON: go to page 3 (celebration) ----------
+        if (yesBtn) {
+            yesBtn.addEventListener('click', function() {
+                // switch to celebration page (page3)
+                window.switchPage(3);
+                createConfettiCelebration();
+                
+                // additionally, hide NO completely
+                if (noBtn) {
+                    noBtn.style.opacity = '0';
+                    noBtn.style.pointerEvents = 'none';
+                    noBtn.classList.add('btn-no-hidden');
+                }
+                yesBtn.style.transform = 'scale(2.2)';
+            });
+        }
+
+        // ---------- CONFETTI / CELEBRATION ----------
+        function createConfettiCelebration() {
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const conf = document.createElement('div');
+                    conf.className = 'float-item'; // reuse
+                    conf.style.position = 'fixed';
+                    conf.style.left = Math.random() * 100 + '%';
+                    conf.style.top = '-10%';
+                    conf.style.fontSize = (Math.random() * 30 + 20) + 'px';
+                    conf.style.opacity = '0.5';
+                    conf.style.animation = 'none';
+                    conf.style.color = ['#d9b0ff', '#ffb3d9', '#ffffff', '#b380cc', '#ff99bb'][Math.floor(Math.random() * 5)];
+                    conf.innerHTML = ['💜', '🩷', '🖤', '🤍', '🌸', '✨', '💕'][Math.floor(Math.random() * 7)];
+                    conf.style.animation = 'floatUp 3s linear forwards';
+                    conf.style.zIndex = '9999';
+                    document.body.appendChild(conf);
+                    setTimeout(() => conf.remove(), 2900);
+                }, i * 20);
+            }
+        }
+
+        // add floatUp keyframe if missing
+        const styleSheet = document.createElement("style");
+        styleSheet.innerHTML = `@keyframes floatUp { 0% { transform: translateY(0) rotate(0deg); } 100% { transform: translateY(100vh) rotate(360deg); } }`;
+        document.head.appendChild(styleSheet);
+
+        // ---------- AUTOPLAY FALLBACK: Spotify iframe already includes &autoplay=1, but we retrigger ----------
+        function triggerPlay() {
+            const iframes = document.querySelectorAll('iframe');
+            iframes.forEach(iframe => {
+                iframe.contentWindow.postMessage({ command: 'play', context: 'track:0Azf3U8BVU8rv2pSCnjSoB' }, '*');
+            });
+        }
+        window.addEventListener('load', triggerPlay);
+        document.body.addEventListener('click', function once() { triggerPlay(); }, { once: true });
+
+        // also on page 2 or 3 we want song playing
+        window.switchPage(1); // ensure page 1 active
+
+        // make dot nav work with existing switchPage
+        // manually attach dots
+        document.querySelectorAll('.dot').forEach((dot, idx) => {
+            dot.addEventListener('click', function() { switchPage(idx + 1); });
+        });
+
+        // fix for page2 / page3 also have credit at bottom – all centered
+    })();
+</script>
+
+<!-- extra decorative alignments -->
+<div style="position:fixed; bottom:8px; right:15px; opacity:0.18; font-size: 3rem; z-index:99; pointer-events: none;">🩷💜</div>
+<div style="position:fixed; top:10px; left:15px; opacity:0.15; font-size: 3.8rem; z-index:99; pointer-events: none; transform: rotate(-10deg);">🖤🤍</div>
+
+<!-- perfect centering assurance -->
+<style>
+    .book { display: flex; flex-direction: column; align-items: center; }
+    .page { width: 100%; }
+    .designer-credit { flex-wrap: wrap; justify-content: center; text-align: center; }
+    .btn-panel { justify-content: center; }
+    .spotify-perfect { display: flex; justify-content: center; }
+    iframe { margin: 0 auto; }
+    .nav-dots { justify-content: center; }
+    body { display: flex; flex-direction: column; align-items: center; }
+</style>
+
+</body>
+</html>
