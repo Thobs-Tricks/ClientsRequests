@@ -42,9 +42,6 @@ body {
   box-shadow: 0 0 80px rgba(212,160,23,0.35), 0 0 200px rgba(0,0,0,0.9);
 }
 
-/* ═══════════════════════════════
-   BACKGROUND LAYERS
-═══════════════════════════════ */
 .bg-gradient {
   position: absolute;
   inset: 0;
@@ -56,7 +53,6 @@ body {
   z-index: 0;
 }
 
-/* Geometric background cross - large, faint */
 .bg-cross-svg {
   position: absolute;
   top: 50%;
@@ -68,7 +64,6 @@ body {
   z-index: 1;
 }
 
-/* Gold dots pattern */
 .dots-pattern {
   position: absolute;
   inset: 0;
@@ -78,7 +73,6 @@ body {
   opacity: 0.5;
 }
 
-/* Diagonal slant band */
 .slant-band {
   position: absolute;
   left: -100px;
@@ -101,9 +95,6 @@ body {
   z-index: 2;
 }
 
-/* ═══════════════════════════════
-   BORDER FRAME
-═══════════════════════════════ */
 .outer-border {
   position: absolute;
   inset: 10px;
@@ -119,22 +110,14 @@ body {
   pointer-events: none;
 }
 
-/* Corner ornaments */
-.corner {
-  position: absolute;
-  width: 36px;
-  height: 36px;
-  z-index: 4;
-}
+.corner { position: absolute; width: 36px; height: 36px; z-index: 4; }
 .corner svg { width: 36px; height: 36px; }
 .corner.tl { top: 8px; left: 8px; }
 .corner.tr { top: 8px; right: 8px; transform: scaleX(-1); }
 .corner.bl { bottom: 8px; left: 8px; transform: scaleY(-1); }
 .corner.br { bottom: 8px; right: 8px; transform: scale(-1); }
 
-/* ═══════════════════════════════
-   HEADER
-═══════════════════════════════ */
+/* ═══ HEADER ═══ */
 .header {
   position: relative;
   z-index: 5;
@@ -166,11 +149,7 @@ body {
   background: linear-gradient(90deg, transparent, var(--gold3), transparent);
   max-width: 160px;
 }
-.logo-img {
-  width: 70px;
-  /*filter: brightness(0) invert(1);*/
-  opacity: 0.9;
-}
+.logo-img { width: 100px; opacity: 0.9; }
 
 .church-name {
   font-family: 'Cinzel', serif;
@@ -182,7 +161,6 @@ body {
   margin-bottom: 28px;
 }
 
-/* Presents line with ward */
 .ward-title {
   font-family: 'Cinzel Decorative', serif;
   font-weight: 700;
@@ -194,9 +172,7 @@ body {
   margin-bottom: 4px;
 }
 
-/* ═══════════════════════════════
-   DIVIDER
-═══════════════════════════════ */
+/* ═══ DIVIDER ═══ */
 .divider {
   display: flex;
   align-items: center;
@@ -207,22 +183,10 @@ body {
 }
 .divider-line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gold3)); }
 .divider-line.right { background: linear-gradient(90deg, var(--gold3), transparent); }
-.divider-diamond {
-  width: 8px; height: 8px;
-  background: var(--gold);
-  transform: rotate(45deg);
-  flex-shrink: 0;
-}
-.divider-dot {
-  width: 4px; height: 4px;
-  background: var(--gold3);
-  border-radius: 50%;
-  flex-shrink: 0;
-}
+.divider-diamond { width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; }
+.divider-dot { width: 4px; height: 4px; background: var(--gold3); border-radius: 50%; flex-shrink: 0; }
 
-/* ═══════════════════════════════
-   EASTER TITLE BLOCK
-═══════════════════════════════ */
+/* ═══ TITLE ═══ */
 .title-block {
   position: relative;
   z-index: 5;
@@ -264,12 +228,10 @@ body {
   text-shadow: 0 2px 20px rgba(255,255,255,0.15);
   display: block;
   margin-top: -8px;
-  margin-left: 0.55em; /* optical offset for letter-spacing */
+  margin-left: 0.55em;
 }
 
-/* ═══════════════════════════════
-   THEME BAND
-═══════════════════════════════ */
+/* ═══ THEME ═══ */
 .theme-band {
   position: relative;
   z-index: 5;
@@ -303,9 +265,7 @@ body {
   font-weight: 600;
 }
 
-/* ═══════════════════════════════
-   DATE & VENUE ROW
-═══════════════════════════════ */
+/* ═══ DATE & VENUE ═══ */
 .info-row {
   position: relative;
   z-index: 5;
@@ -321,17 +281,14 @@ body {
   position: relative;
   overflow: hidden;
 }
-
 .info-card.date-card {
   background: linear-gradient(135deg, rgba(139,0,0,0.7), rgba(192,57,43,0.4));
   border: 1px solid rgba(192,57,43,0.5);
 }
-
 .info-card.venue-card {
   background: linear-gradient(135deg, rgba(14,105,115,0.7), rgba(26,188,156,0.3));
   border: 1px solid rgba(14,105,115,0.6);
 }
-
 .info-card-label {
   font-family: 'Cinzel', serif;
   font-size: 0.6rem;
@@ -344,12 +301,7 @@ body {
   margin-bottom: 8px;
 }
 .info-card-label::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.15); }
-
-.date-display {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-}
+.date-display { display: flex; align-items: baseline; gap: 8px; }
 .date-nums {
   font-family: 'Cinzel Decorative', serif;
   font-size: 2.6rem;
@@ -365,7 +317,6 @@ body {
   line-height: 1.3;
   letter-spacing: 0.05em;
 }
-
 .venue-name {
   font-family: 'Cinzel', serif;
   font-size: 1.25rem;
@@ -383,9 +334,11 @@ body {
   margin-top: 3px;
 }
 
-/* ═══════════════════════════════
-   SPEAKERS SECTION
-═══════════════════════════════ */
+/* ═══════════════════════════════════════════
+   SPEAKERS — NEW LAYOUT
+   ─ Featured Pastor row (centred, larger)
+   ─ Three speakers row below
+═══════════════════════════════════════════ */
 .speakers-section {
   position: relative;
   z-index: 5;
@@ -394,9 +347,8 @@ body {
 
 .section-heading {
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 }
-
 .section-heading-text {
   font-family: 'Cinzel', serif;
   font-size: 0.65rem;
@@ -414,15 +366,152 @@ body {
   top: 50%;
   width: 80px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold3));
 }
 .section-heading-text::before { right: 100%; background: linear-gradient(90deg, transparent, var(--gold3)); }
 .section-heading-text::after  { left: 100%; background: linear-gradient(90deg, var(--gold3), transparent); }
 
-.speakers-grid {
+/* ── FEATURED PASTOR ── */
+.featured-pastor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 32px;
+  position: relative;
+}
+
+/* Subtle halo glow behind the featured card */
+.featured-pastor::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212,160,23,0.18) 0%, transparent 70%);
+  z-index: 0;
+}
+
+.featured-badge {
+  font-family: 'Cinzel', serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.6em;
+  color: var(--gold);
+  text-transform: uppercase;
+  border: 1px solid rgba(212,160,23,0.4);
+  background: rgba(212,160,23,0.08);
+  padding: 4px 18px;
+  margin-bottom: 18px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Large photo ring for pastor */
+.photo-ring-lg {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(135deg, var(--gold2), var(--gold), var(--gold3), var(--scarlet));
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 0 1px rgba(212,160,23,0.15), 0 8px 30px rgba(212,160,23,0.25);
+}
+
+.photo-inner-lg {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 35%, #2a1a08, #0d0804);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.person-svg-lg { width: 88px; height: 88px; opacity: 0.45; }
+
+.photo-label {
+  position: absolute;
+  bottom: 0;
+  left: 0; right: 0;
+  font-family: 'Cinzel', serif;
+  font-size: 0.42rem;
+  letter-spacing: 0.2em;
+  color: rgba(255,255,255,0.3);
+  text-align: center;
+  padding-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.featured-info {
+  text-align: center;
+  margin-top: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.featured-name {
+  font-family: 'Cinzel', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.08em;
+  line-height: 1.3;
+  text-shadow: 0 0 20px rgba(212,160,23,0.3);
+}
+
+.featured-title-tag {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--gold);
+  margin-top: 5px;
+  letter-spacing: 0.05em;
+}
+
+/* Decorative line below pastor */
+.pastor-divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 24px 0 28px;
+}
+.pastor-divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212,160,23,0.35));
+}
+.pastor-divider-line.right {
+  background: linear-gradient(90deg, rgba(212,160,23,0.35), transparent);
+}
+.pastor-divider-center {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.pd-diamond { width: 6px; height: 6px; background: var(--gold3); transform: rotate(45deg); }
+.pd-cross {
+  font-size: 1rem;
+  color: rgba(212,160,23,0.5);
+  line-height: 1;
+}
+.pd-text {
+  font-family: 'Cinzel', serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.4em;
+  color: rgba(212,160,23,0.45);
+  text-transform: uppercase;
+}
+
+/* ── THREE SPEAKERS BELOW ── */
+.speakers-trio {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
 .speaker-card {
@@ -430,18 +519,23 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 12px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 6px;
+  padding: 20px 12px 18px;
+  transition: background 0.3s;
 }
+.speaker-card:hover { background: rgba(255,255,255,0.04); }
 
-/* Photo circle with unique gradient border per speaker */
+/* Photo ring */
 .photo-ring {
-  width: 120px;
-  height: 120px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
   padding: 3px;
   position: relative;
   flex-shrink: 0;
 }
-.photo-ring.s1 { background: linear-gradient(135deg, var(--gold), var(--gold3), var(--scarlet)); }
 .photo-ring.s2 { background: linear-gradient(135deg, var(--teal), var(--teal2), var(--navy)); }
 .photo-ring.s3 { background: linear-gradient(135deg, var(--purple), var(--lavender), var(--scarlet)); }
 .photo-ring.s4 { background: linear-gradient(135deg, var(--gold3), var(--teal), var(--gold2)); }
@@ -450,7 +544,6 @@ body {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background: #1a1208;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -458,33 +551,13 @@ body {
   position: relative;
   overflow: hidden;
 }
-.photo-inner.s1 { background: radial-gradient(circle at 40% 35%, #2a1a08, #0d0804); }
 .photo-inner.s2 { background: radial-gradient(circle at 40% 35%, #081a1e, #04100e); }
 .photo-inner.s3 { background: radial-gradient(circle at 40% 35%, #1a0824, #0a0412); }
 .photo-inner.s4 { background: radial-gradient(circle at 40% 35%, #1a1408, #0a0c04); }
 
-.person-svg {
-  width: 68px;
-  height: 68px;
-  opacity: 0.45;
-}
+.person-svg { width: 62px; height: 62px; opacity: 0.45; }
 
-.photo-label {
-  position: absolute;
-  bottom: 0;
-  left: 0; right: 0;
-  font-family: 'Cinzel', serif;
-  font-size: 0.45rem;
-  letter-spacing: 0.2em;
-  color: rgba(255,255,255,0.3);
-  text-align: center;
-  padding-bottom: 10px;
-  text-transform: uppercase;
-}
-
-.speaker-info {
-  text-align: center;
-}
+.speaker-info { text-align: center; }
 .speaker-name {
   font-family: 'Cinzel', serif;
   font-size: 0.72rem;
@@ -500,14 +573,11 @@ body {
   line-height: 1.3;
   margin-top: 3px;
 }
-.speaker-role.s1 { color: var(--gold); }
 .speaker-role.s2 { color: var(--teal2); }
 .speaker-role.s3 { color: var(--lavender); }
 .speaker-role.s4 { color: var(--gold3); }
 
-/* ═══════════════════════════════
-   FOOTER BAND
-═══════════════════════════════ */
+/* ═══ FOOTER ═══ */
 .footer-band {
   position: relative;
   z-index: 5;
@@ -551,10 +621,7 @@ body {
   gap: 6px;
   opacity: 0.7;
 }
-.footer-logo-small img {
-  width: 40px;
-  /*filter: brightness(0) sepia(1) saturate(3) hue-rotate(5deg) brightness(0.7);*/
-}
+.footer-logo-small img { width: 50px; }
 .footer-logo-small span {
   font-family: 'Cinzel', serif;
   font-size: 0.45rem;
@@ -563,32 +630,13 @@ body {
   text-transform: uppercase;
 }
 
-/* Bottom rainbow bar */
 .rainbow-bar {
   height: 6px;
   background: linear-gradient(90deg,
-    var(--crimson) 0%,
-    var(--scarlet) 15%,
-    var(--gold) 30%,
-    var(--gold2) 40%,
-    var(--teal) 55%,
-    var(--teal2) 65%,
-    var(--purple) 80%,
-    var(--lavender) 100%);
+    var(--crimson) 0%, var(--scarlet) 15%, var(--gold) 30%, var(--gold2) 40%,
+    var(--teal) 55%, var(--teal2) 65%, var(--purple) 80%, var(--lavender) 100%);
   position: relative;
   z-index: 5;
-}
-
-/* ═══════════════════════════════
-   FLAME / FIRE DECORATION
-═══════════════════════════════ */
-.flame-deco {
-  position: absolute;
-  top: -6px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 6;
-  opacity: 0.85;
 }
 </style>
 </head>
@@ -599,67 +647,34 @@ body {
   <div class="bg-gradient"></div>
   <div class="dots-pattern"></div>
 
-  <!-- Faint cross -->
   <svg class="bg-cross-svg" viewBox="0 0 700 900" xmlns="http://www.w3.org/2000/svg">
     <rect x="300" y="80" width="100" height="740" fill="white" rx="8"/>
     <rect x="100" y="230" width="500" height="100" fill="white" rx="8"/>
   </svg>
 
-  <!-- Slant lines -->
   <div class="slant-band"></div>
   <div class="slant-band-2"></div>
-
-  <!-- Frame borders -->
   <div class="outer-border"></div>
   <div class="inner-border"></div>
 
   <!-- Corner ornaments -->
-  <div class="corner tl">
-    <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M2 34 L2 2 L34 2" stroke="#D4A017" stroke-width="1.5" fill="none" opacity="0.7"/>
-      <path d="M2 26 L2 2 L26 2" stroke="#D4A017" stroke-width="0.5" fill="none" opacity="0.4"/>
-      <circle cx="2" cy="2" r="2" fill="#D4A017" opacity="0.7"/>
-      <path d="M8 2 L2 8" stroke="#D4A017" stroke-width="0.5" opacity="0.4"/>
-      <path d="M2 14 L14 2" stroke="#D4A017" stroke-width="0.5" opacity="0.3"/>
-    </svg>
-  </div>
-  <div class="corner tr">
-    <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M2 34 L2 2 L34 2" stroke="#D4A017" stroke-width="1.5" fill="none" opacity="0.7"/>
-      <path d="M2 26 L2 2 L26 2" stroke="#D4A017" stroke-width="0.5" fill="none" opacity="0.4"/>
-      <circle cx="2" cy="2" r="2" fill="#D4A017" opacity="0.7"/>
-    </svg>
-  </div>
-  <div class="corner bl">
-    <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M2 34 L2 2 L34 2" stroke="#D4A017" stroke-width="1.5" fill="none" opacity="0.7"/>
-      <path d="M2 26 L2 2 L26 2" stroke="#D4A017" stroke-width="0.5" fill="none" opacity="0.4"/>
-      <circle cx="2" cy="2" r="2" fill="#D4A017" opacity="0.7"/>
-    </svg>
-  </div>
-  <div class="corner br">
-    <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M2 34 L2 2 L34 2" stroke="#D4A017" stroke-width="1.5" fill="none" opacity="0.7"/>
-      <path d="M2 26 L2 2 L26 2" stroke="#D4A017" stroke-width="0.5" fill="none" opacity="0.4"/>
-      <circle cx="2" cy="2" r="2" fill="#D4A017" opacity="0.7"/>
-    </svg>
-  </div>
+  <div class="corner tl"><svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 34 L2 2 L34 2" stroke="#D4A017" stroke-width="1.5" fill="none" opacity="0.7"/><path d="M2 26 L2 2 L26 2" stroke="#D4A017" stroke-width="0.5" fill="none" opacity="0.4"/><circle cx="2" cy="2" r="2" fill="#D4A017" opacity="0.7"/><path d="M8 2 L2 8" stroke="#D4A017" stroke-width="0.5" opacity="0.4"/><path d="M2 14 L14 2" stroke="#D4A017" stroke-width="0.5" opacity="0.3"/></svg></div>
+  <div class="corner tr"><svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 34 L2 2 L34 2" stroke="#D4A017" stroke-width="1.5" fill="none" opacity="0.7"/><path d="M2 26 L2 2 L26 2" stroke="#D4A017" stroke-width="0.5" fill="none" opacity="0.4"/><circle cx="2" cy="2" r="2" fill="#D4A017" opacity="0.7"/></svg></div>
+  <div class="corner bl"><svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 34 L2 2 L34 2" stroke="#D4A017" stroke-width="1.5" fill="none" opacity="0.7"/><path d="M2 26 L2 2 L26 2" stroke="#D4A017" stroke-width="0.5" fill="none" opacity="0.4"/><circle cx="2" cy="2" r="2" fill="#D4A017" opacity="0.7"/></svg></div>
+  <div class="corner br"><svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 34 L2 2 L34 2" stroke="#D4A017" stroke-width="1.5" fill="none" opacity="0.7"/><path d="M2 26 L2 2 L26 2" stroke="#D4A017" stroke-width="0.5" fill="none" opacity="0.4"/><circle cx="2" cy="2" r="2" fill="#D4A017" opacity="0.7"/></svg></div>
 
   <!-- ══ HEADER ══ -->
   <div class="header">
     <div class="presents-line">✦ Presents ✦</div>
-
     <div class="logo-band">
       <div class="logo-line"></div>
-      <img class="logo-img" src="images/logo_white.jpg" alt="Church of the Nazarene">
+      <img class="logo-img" src="images/logo_white_rm.png" alt="Church of the Nazarene">
       <div class="logo-line" style="background: linear-gradient(90deg, var(--gold3), transparent);"></div>
     </div>
     <div class="church-name">Mafefe Church of the Nazarene</div>
-
     <div class="ward-title">PRESENTES</div>
   </div>
 
-  <!-- Divider -->
   <div class="divider">
     <div class="divider-line"></div>
     <div class="divider-dot"></div>
@@ -668,7 +683,7 @@ body {
     <div class="divider-line right"></div>
   </div>
 
-  <!-- ══ EASTER TITLE ══ -->
+  <!-- ══ TITLE ══ -->
   <div class="title-block">
     <div class="presents-tag">2026</div>
     <span class="easter-word">Easter</span>
@@ -709,24 +724,38 @@ body {
       <span class="section-heading-text">Guest Speakers</span>
     </div>
 
-    <div class="speakers-grid">
-
-      <!-- Speaker 1 -->
-      <div class="speaker-card">
-        <div class="photo-ring s1">
-          <div class="photo-inner s1">
-            <svg class="person-svg" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="34" cy="24" r="13" fill="rgba(212,160,23,0.35)"/>
-              <ellipse cx="34" cy="58" rx="20" ry="11" fill="rgba(212,160,23,0.25)"/>
-            </svg>
-            <div class="photo-label">Photo Here</div>
-          </div>
-        </div>
-        <div class="speaker-info">
-          <div class="speaker-name">Rev MJ<br>Motebejana</div>
-          <div class="speaker-role s1">Speaker</div>
+    <!-- ─ FEATURED PASTOR ─ -->
+    <div class="featured-pastor">
+      <div class="photo-ring-lg">
+        <div class="photo-inner-lg">
+          <svg class="person-svg-lg" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="44" cy="30" r="17" fill="rgba(212,160,23,0.38)"/>
+            <ellipse cx="44" cy="74" rx="26" ry="14" fill="rgba(212,160,23,0.28)"/>
+          </svg>
+          <div class="photo-label">Photo Here</div>
         </div>
       </div>
+      <div class="featured-info">
+        <div class="featured-name">Rev. MJ Motebejana</div>
+        <div class="featured-title-tag">Presiding Minister</div>
+      </div>
+    </div>
+
+    <!-- Decorative pastor / speaker divider -->
+    <div class="pastor-divider">
+      <div class="pastor-divider-line"></div>
+      <div class="pastor-divider-center">
+        <div class="pd-diamond"></div>
+        <span class="pd-cross">✝</span>
+        <span class="pd-text">Also Featuring</span>
+        <span class="pd-cross">✝</span>
+        <div class="pd-diamond"></div>
+      </div>
+      <div class="pastor-divider-line right"></div>
+    </div>
+
+    <!-- ─ THREE SPEAKERS ─ -->
+    <div class="speakers-trio">
 
       <!-- Speaker 2 -->
       <div class="speaker-card">
@@ -762,7 +791,7 @@ body {
         </div>
       </div>
 
-      <!-- Speaker 4 – placeholder -->
+      <!-- Speaker 4 -->
       <div class="speaker-card">
         <div class="photo-ring s4">
           <div class="photo-inner s4">
@@ -782,19 +811,18 @@ body {
     </div>
   </div>
 
-  <!-- ══ FOOTER BAND ══ -->
+  <!-- ══ FOOTER ══ -->
   <div class="footer-band">
     <div class="footer-quote">
       "For God so loved the world that He gave His only begotten Son…"
       <span>— John 3:16</span>
     </div>
     <div class="footer-logo-small">
-      <img class="logo-img" src="images/logo_gold.png" alt="Church of the Nazarene">
+      <img class="logo-img" src="images/logo_gold_rm.png" alt="Church of the Nazarene">
       <span>Church of<br>the Nazarene</span>
     </div>
   </div>
 
-  <!-- Rainbow bar -->
   <div class="rainbow-bar"></div>
 
 </div>
