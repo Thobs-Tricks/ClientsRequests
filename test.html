@@ -3,10 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Easter Conference – A4 (297mm, theme removed) Mafefe Church of the Nazarene</title>
+<title>Easter Conference 2026 – Mafefe Church of the Nazarene</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Dancing+Script:wght@700&family=Montserrat:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-  /* RESET & A4 EXACT DIMENSIONS – 210mm x 297mm */
   * { margin:0; padding:0; box-sizing:border-box; }
 
   body {
@@ -19,7 +18,6 @@
     font-family: 'Montserrat', sans-serif;
   }
 
-  /* A4 sheet – all proportions scale to full 297mm height */
   .poster {
     width: 210mm;
     height: 297mm;
@@ -30,10 +28,9 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    /* content stretches from top to bottom */
   }
 
-  /* ========== BACKGROUND (unchanged intensity) ========== */
+  /* ── BACKGROUNDS ── */
   .bg-gradient {
     position: absolute; inset:0;
     background:
@@ -43,25 +40,28 @@
       linear-gradient(165deg, #0D0A04 0%, #130f07 40%, #0B0E1A 100%);
     z-index: 0;
   }
-
   .dots-pattern {
     position: absolute; inset:0;
     background-image: radial-gradient(circle, rgba(212,160,23,0.12) 1px, transparent 1px);
     background-size: 24px 24px;
     z-index: 1; opacity: 0.5;
   }
-
   .bg-cross-svg {
     position: absolute; top:50%; left:50%; transform:translate(-50%, -50%);
     width: 600px; height: 800px; opacity: 0.03; z-index: 1;
   }
-
-  .slant-band, .slant-band-2 {
+  .slant-band {
     position: absolute; left:-50px; width:800px; z-index:2;
+    top:185px; height:3px;
+    background: linear-gradient(90deg, transparent, #A87C10, #F5C842, #A87C10, transparent);
+    transform: rotate(-3deg); opacity:0.4;
   }
-  .slant-band { top:200px; height:3px; background: linear-gradient(90deg, transparent, #A87C10, #F5C842, #A87C10, transparent); transform: rotate(-3deg); opacity:0.4; }
-  .slant-band-2 { top:206px; height:1px; background: linear-gradient(90deg, transparent, rgba(245,200,66,0.25), transparent); transform: rotate(-3deg); }
-
+  .slant-band-2 {
+    position: absolute; left:-50px; width:800px; z-index:2;
+    top:191px; height:1px;
+    background: linear-gradient(90deg, transparent, rgba(245,200,66,0.25), transparent);
+    transform: rotate(-3deg);
+  }
   .outer-border { position:absolute; inset:8px; border:1px solid rgba(212,160,23,0.3); z-index:3; pointer-events:none; }
   .inner-border { position:absolute; inset:12px; border:1px solid rgba(212,160,23,0.15); z-index:3; pointer-events:none; }
 
@@ -72,37 +72,34 @@
   .corner.bl { bottom:6px; left:6px; transform:scaleY(-1); }
   .corner.br { bottom:6px; right:6px; transform:scale(-1); }
 
-  /* ========== CONTENT – PROPORTIONALLY SCALED TO 297mm ========== */
-  /* margins/paddings/fonts adjusted to fill height after theme removal */
-
-  /* ----- header (starts near top) ----- */
+  /* ── HEADER ── */
   .header {
     position: relative; z-index:5;
-    padding: 22px 45px 0;
+    padding: 16px 45px 0;
     text-align: center;
     flex-shrink: 0;
   }
   .logo-band {
     display: flex; align-items: center; justify-content: center; gap:15px;
-    margin-bottom: 6px;
+    margin-bottom: 5px;
   }
-  .logo-line { flex:1; height:1px; background: linear-gradient(90deg, transparent, #A87C10, transparent); max-width:140px; }
-  .logo-img { width:78px; opacity:0.9; }
+  .logo-line { flex:1; height:1px; background: linear-gradient(90deg, transparent, #A87C10, transparent); max-width:130px; }
+  .logo-img { width:68px; opacity:0.9; }
   .church-name {
-    font-family: 'Cinzel', serif; font-weight:600; font-size:0.7rem;
-    letter-spacing:0.3em; color:rgba(255,255,255,0.6); text-transform:uppercase;
-    margin-bottom: 10px;
+    font-family: 'Cinzel', serif; font-weight:600; font-size:0.62rem;
+    letter-spacing:0.28em; color:rgba(255,255,255,0.6); text-transform:uppercase;
+    line-height: 1.6;
   }
   .ward-title {
-    font-family: 'Cinzel Decorative', serif; font-weight:700; font-size:1.4rem;
+    font-family: 'Cinzel Decorative', serif; font-weight:700; font-size:1.2rem;
     letter-spacing:0.14em; color:#FDF5E6; text-shadow:0 0 20px rgba(212,160,23,0.5);
-    line-height:1.2;
+    line-height:1.2; margin-top: 2px;
   }
 
-  /* divider */
+  /* ── DIVIDER ── */
   .divider {
     display: flex; align-items: center; gap:10px;
-    margin: 12px 45px 8px;
+    margin: 8px 45px 6px;
     flex-shrink: 0;
   }
   .divider-line { flex:1; height:1px; background: linear-gradient(90deg, transparent, #A87C10); }
@@ -110,90 +107,184 @@
   .divider-diamond { width:7px; height:7px; background:#D4A017; transform:rotate(45deg); flex-shrink:0; }
   .divider-dot { width:4px; height:4px; background:#A87C10; border-radius:50%; flex-shrink:0; }
 
-  /* title */
+  /* ── TITLE ── */
   .title-block {
     position: relative; z-index:5; text-align: center;
     padding: 0 35px;
     flex-shrink: 0;
   }
   .presents-tag {
-    display: inline-block; border:1px solid #A87C10; padding:4px 20px;
-    font-family: 'Cinzel', serif; font-size:0.6rem; letter-spacing:0.45em;
-    color:#D4A017; text-transform:uppercase; margin-bottom: 8px;
+    display: inline-block; border:1px solid #A87C10; padding:3px 18px;
+    font-family: 'Cinzel', serif; font-size:0.58rem; letter-spacing:0.45em;
+    color:#D4A017; text-transform:uppercase; margin-bottom: 6px;
     background:rgba(212,160,23,0.07);
   }
   .easter-word {
     font-family: 'Dancing Script', cursive;
-    font-size: 6rem; line-height:0.85;
+    font-size: 5.4rem; line-height:0.85;
     display: block;
     background: linear-gradient(135deg, #A87C10 0%, #F5C842 40%, #D4A017 60%, #A87C10 100%);
     -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     filter: drop-shadow(0 2px 18px rgba(212,160,23,0.3));
   }
   .conference-label {
-    font-family: 'Cinzel', serif; font-weight:900; font-size:2.3rem;
-    letter-spacing:0.48em; color:#fff; text-shadow:0 2px 15px rgba(255,255,255,0.15);
-    display: block; margin-top:-6px; margin-left:0.45em;
+    font-family: 'Cinzel', serif; font-weight:900; font-size:2rem;
+    letter-spacing:0.45em; color:#fff; text-shadow:0 2px 15px rgba(255,255,255,0.15);
+    display: block; margin-top:-5px; margin-left:0.45em;
   }
 
-  /* info row – now appears directly after title (theme removed) */
-  .info-row {
-    position: relative; z-index:5; display: flex; gap:18px;
-    margin: 22px 45px 0;          /* slightly increased top margin to compensate removed theme */
+  /* ── THEME BAND ── */
+  .theme-band {
+    position: relative; z-index:5;
+    margin: 9px 45px 0;
+    background: linear-gradient(135deg,
+      rgba(139,0,0,0.55) 0%,
+      rgba(75,0,130,0.42) 50%,
+      rgba(14,105,115,0.42) 100%);
+    border: 1px solid rgba(212,160,23,0.2);
+    border-left: 3px solid #D4A017;
+    padding: 7px 16px;
+    border-radius: 2px;
     flex-shrink: 0;
   }
-  .info-card {
-    flex:1; border-radius:4px; padding:14px 18px;
+  .theme-tag {
+    font-family: 'Cinzel', serif; font-size:0.5rem; letter-spacing:0.5em;
+    color:#D4A017; text-transform:uppercase; display:block; margin-bottom:3px;
   }
-  .info-card.date-card { background:linear-gradient(135deg, rgba(139,0,0,0.7), rgba(192,57,43,0.4)); border:1px solid rgba(192,57,43,0.5); }
-  .info-card.venue-card { background:linear-gradient(135deg, rgba(14,105,115,0.7), rgba(26,188,156,0.3)); border:1px solid rgba(14,105,115,0.6); }
+  .theme-text {
+    font-family: 'Cormorant Garamond', serif; font-style:italic;
+    font-size:0.95rem; color:#FDF5E6; line-height:1.3; font-weight:600;
+  }
+
+  /* ── DATE & VENUE ── */
+  .info-row {
+    position: relative; z-index:5; display: flex; gap:16px;
+    margin: 9px 45px 0;
+    flex-shrink: 0;
+  }
+  .info-card { flex:1; border-radius:4px; padding:10px 16px; }
+  .info-card.date-card {
+    background:linear-gradient(135deg, rgba(139,0,0,0.7), rgba(192,57,43,0.4));
+    border:1px solid rgba(192,57,43,0.5);
+  }
+  .info-card.venue-card {
+    background:linear-gradient(135deg, rgba(14,105,115,0.7), rgba(26,188,156,0.3));
+    border:1px solid rgba(14,105,115,0.6);
+  }
   .info-card-label {
-    font-family: 'Cinzel', serif; font-size:0.55rem; letter-spacing:0.5em;
-    color:rgba(255,255,255,0.55); text-transform:uppercase; display:flex; align-items:center; gap:5px; margin-bottom:4px;
+    font-family: 'Cinzel', serif; font-size:0.52rem; letter-spacing:0.5em;
+    color:rgba(255,255,255,0.55); text-transform:uppercase;
+    display:flex; align-items:center; gap:5px; margin-bottom:3px;
   }
   .info-card-label::after { content:''; flex:1; height:1px; background:rgba(255,255,255,0.15); }
   .date-display { display:flex; align-items:baseline; gap:6px; }
-  .date-nums { font-family:'Cinzel Decorative', serif; font-size:2.2rem; font-weight:900; color:#fff; line-height:1; }
-  .date-month-year { font-family:'Montserrat', sans-serif; font-weight:600; font-size:0.75rem; color:rgba(255,255,255,0.7); line-height:1.3; }
-  .venue-name { font-family:'Cinzel', serif; font-size:1.1rem; font-weight:700; color:#fff; letter-spacing:0.06em; line-height:1.2; }
-  .venue-sub { font-family:'Montserrat', sans-serif; font-size:0.65rem; color:#1ABC9C; letter-spacing:0.2em; text-transform:uppercase; margin-top:3px; }
+  .date-nums { font-family:'Cinzel Decorative', serif; font-size:1.9rem; font-weight:900; color:#fff; line-height:1; }
+  .date-month-year { font-family:'Montserrat', sans-serif; font-weight:600; font-size:0.68rem; color:rgba(255,255,255,0.7); line-height:1.3; }
+  .venue-name { font-family:'Cinzel', serif; font-size:0.95rem; font-weight:700; color:#fff; letter-spacing:0.06em; line-height:1.2; }
+  .venue-sub { font-family:'Montserrat', sans-serif; font-size:0.6rem; color:#1ABC9C; letter-spacing:0.2em; text-transform:uppercase; margin-top:2px; }
 
-  /* ----- SPEAKERS SECTION – takes remaining space ----- */
+  /* ── PROGRAMME / SESSION TIMES ── */
+  .programme {
+    position: relative; z-index:5;
+    margin: 9px 45px 0;
+    flex-shrink: 0;
+  }
+  .programme-heading {
+    display: flex; align-items: center; gap:8px; margin-bottom:7px;
+  }
+  .prog-line { flex:1; height:1px; background:rgba(212,160,23,0.2); }
+  .prog-title {
+    font-family: 'Cinzel', serif; font-size:0.52rem; letter-spacing:0.55em;
+    color:rgba(212,160,23,0.7); text-transform:uppercase; white-space:nowrap;
+  }
+  .prog-diamond { width:5px; height:5px; background:#A87C10; transform:rotate(45deg); flex-shrink:0; }
+
+  .sessions-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+  }
+
+  .session-day {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .session-day-header {
+    padding: 4px 6px;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-size: 0.48rem;
+    letter-spacing: 0.18em;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .session-day-header.fri { background: rgba(139,0,0,0.45); color: #F5C842; }
+  .session-day-header.sat { background: rgba(74,35,90,0.5);  color: #C9A9E8; }
+  .session-day-header.sun { background: rgba(14,105,115,0.5); color: #1ABC9C; }
+
+  .session-slots { padding: 5px 5px; display: flex; flex-direction: column; gap: 4px; }
+
+  .session-slot {
+    display: flex; align-items: flex-start; gap: 4px;
+  }
+  .slot-dot {
+    width: 4px; height: 4px; border-radius: 50%; flex-shrink:0; margin-top: 3px;
+  }
+  .slot-dot.fri  { background: rgba(245,200,66,0.6); }
+  .slot-dot.sat  { background: rgba(155,89,182,0.7); }
+  .slot-dot.sun  { background: rgba(26,188,156,0.7); }
+
+  .slot-text { display: flex; flex-direction: column; gap: 0; }
+  .slot-label {
+    font-family: 'Montserrat', sans-serif; font-size: 0.4rem;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: rgba(255,255,255,0.4); line-height: 1.4;
+  }
+  .slot-time {
+    font-family: 'Cinzel', serif; font-size: 0.5rem;
+    color: rgba(255,255,255,0.85); letter-spacing: 0.05em; line-height: 1.4;
+  }
+
+  /* ── SPEAKERS ── */
   .speakers-section {
     position: relative; z-index:5;
-    margin: 15px 45px 0;
-    flex: 1 1 auto;                /* takes remaining height */
+    margin: 9px 45px 0;
+    flex: 1 1 auto;
     display: flex;
     flex-direction: column;
+    min-height: 0;
   }
-  .section-heading { text-align:center; margin-bottom: 16px; }
+  .section-heading { text-align:center; margin-bottom:8px; }
   .section-heading-text {
-    font-family:'Cinzel', serif; font-size:0.6rem; letter-spacing:0.6em;
+    font-family:'Cinzel', serif; font-size:0.55rem; letter-spacing:0.6em;
     color:#D4A017; text-transform:uppercase; display:inline-block; padding:0 20px;
     position: relative;
   }
   .section-heading-text::before,
   .section-heading-text::after {
-    content:''; position:absolute; top:50%; width:50px; height:1px;
+    content:''; position:absolute; top:50%; width:40px; height:1px;
   }
   .section-heading-text::before { right:100%; background:linear-gradient(90deg, transparent, #A87C10); }
-  .section-heading-text::after { left:100%; background:linear-gradient(90deg, #A87C10, transparent); }
+  .section-heading-text::after  { left:100%;  background:linear-gradient(90deg, #A87C10, transparent); }
 
-  /* featured pastor */
+  /* Featured pastor */
   .featured-pastor {
     display: flex; flex-direction: column; align-items: center;
-    margin-bottom: 12px; position: relative;
+    margin-bottom: 8px; position: relative;
   }
   .featured-pastor::before {
     content:''; position:absolute; top:5px; left:50%; transform:translateX(-50%);
-    width:190px; height:190px; border-radius:50%;
-    background:radial-gradient(circle, rgba(212,160,23,0.2) 0%, transparent 70%); z-index:0;
+    width:160px; height:160px; border-radius:50%;
+    background:radial-gradient(circle, rgba(212,160,23,0.18) 0%, transparent 70%); z-index:0;
   }
   .photo-ring-lg {
-    width: 170px; height:170px; border-radius:50%; padding:4px;
+    width: 145px; height:145px; border-radius:50%; padding:4px;
     background:linear-gradient(135deg, #F5C842, #D4A017, #A87C10, #C0392B);
-    box-shadow:0 0 0 1px rgba(212,160,23,0.2), 0 5px 25px rgba(212,160,23,0.3);
-    z-index:1;
+    box-shadow:0 0 0 1px rgba(212,160,23,0.18), 0 5px 22px rgba(212,160,23,0.28);
+    z-index:1; flex-shrink:0;
   }
   .photo-inner-lg {
     width:100%; height:100%; border-radius:50%;
@@ -201,97 +292,99 @@
     display:flex; align-items:center; justify-content:center;
     overflow:hidden;
   }
-  .photo-rev { width:165px; height:165px; object-fit:cover; }
+  .photo-rev { width:100%; height:100%; object-fit:cover; object-position: top center; border-radius:50%; }
 
-  .featured-info { text-align:center; margin-top:8px; z-index:1; }
-  .featured-name { font-family:'Cinzel', serif; font-size:1.1rem; font-weight:700; color:#fff; letter-spacing:0.06em; }
+  .featured-info { text-align:center; margin-top:6px; z-index:1; }
+  .featured-name { font-family:'Cinzel', serif; font-size:0.95rem; font-weight:700; color:#fff; letter-spacing:0.06em; }
+  .featured-role { font-family:'Cormorant Garamond', serif; font-style:italic; font-size:0.75rem; color:#D4A017; margin-top:1px; }
 
-  /* pastor divider */
+  /* Also featuring divider */
   .pastor-divider {
-    display: flex; align-items:center; gap:8px; margin:8px 0 16px;
+    display: flex; align-items:center; gap:8px; margin:6px 0 8px;
   }
   .pastor-divider-line { flex:1; height:1px; background:linear-gradient(90deg, transparent, rgba(212,160,23,0.35)); }
   .pastor-divider-line.right { background:linear-gradient(90deg, rgba(212,160,23,0.35), transparent); }
   .pastor-divider-center { display:flex; align-items:center; gap:5px; }
-  .pd-diamond { width:6px; height:6px; background:#A87C10; transform:rotate(45deg); }
-  .pd-cross { font-size:0.9rem; color:rgba(212,160,23,0.6); }
-  .pd-text { font-family:'Cinzel', serif; font-size:0.45rem; letter-spacing:0.35em; color:rgba(212,160,23,0.5); text-transform:uppercase; }
+  .pd-diamond { width:5px; height:5px; background:#A87C10; transform:rotate(45deg); }
+  .pd-cross { font-size:0.8rem; color:rgba(212,160,23,0.5); }
+  .pd-text { font-family:'Cinzel', serif; font-size:0.42rem; letter-spacing:0.35em; color:rgba(212,160,23,0.5); text-transform:uppercase; }
 
-  /* speakers duo – now two cards, evenly spaced */
-  .speakers-trio {
-    display: grid; grid-template-columns:repeat(2,1fr); gap:20px;
-    margin: 0 10px;               /* slight side breathing */
+  /* Speakers duo */
+  .speakers-duo {
+    display: grid; grid-template-columns:repeat(2,1fr); gap:14px;
     flex: 1 0 auto;
     align-items: start;
   }
   .speaker-card {
     display: flex; flex-direction:column; align-items:center;
-    background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.05);
-    border-radius:8px; padding:16px 8px 12px;
+    background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06);
+    border-radius:6px; padding:12px 8px 10px; gap: 10px; margin: 0 45px 0 45px;
   }
   .photo-ring {
-    width: 150px; height:150px; border-radius:50%; padding:3px; margin-bottom:8px;
+    width: 120px; height:120px; border-radius:50%; padding:3px; flex-shrink:0;
   }
   .photo-ring.s2 { background:linear-gradient(135deg, #0E6973, #1ABC9C, #0A1628); }
   .photo-ring.s3 { background:linear-gradient(135deg, #4A235A, #9B59B6, #C0392B); }
-
   .photo-inner {
-    width:100%; height:100%; border-radius:50%; display:flex; align-items:center; justify-content:center;
-    overflow:hidden;
+    width:100%; height:100%; border-radius:50%;
+    display:flex; align-items:center; justify-content:center; overflow:hidden;
   }
   .photo-inner.s2 { background:radial-gradient(circle at 40% 35%, #081a1e, #04100e); }
   .photo-inner.s3 { background:radial-gradient(circle at 40% 35%, #1a0824, #0a0412); }
-  .photo-speaker { width:1450px; height:145px; object-fit:cover; }
+  .photo-inner img { width:100%; height:100%; object-fit:cover; object-position:top center; }
 
   .speaker-info { text-align:center; }
-  .speaker-name { font-family:'Cinzel', serif; font-size:0.8rem; font-weight:700; color:#fff; line-height:1.3; }
-  .speaker-role { font-family:'Cormorant Garamond', serif; font-style:italic; font-size:0.75rem; }
+  .speaker-name { font-family:'Cinzel', serif; font-size:0.72rem; font-weight:700; color:#fff; line-height:1.35; }
+  .speaker-role { font-family:'Cormorant Garamond', serif; font-style:italic; font-size:0.7rem; margin-top:1px; }
   .speaker-role.s2 { color:#1ABC9C; }
   .speaker-role.s3 { color:#9B59B6; }
 
-  /* ----- FOOTER (flush bottom) ----- */
+  /* ── FOOTER ── */
   .footer-band {
-    position: relative;
-    margin: 0 45px 25px 45px;   /* reduced bottom margin, pushed to bottom by flex */
-    padding: 12px 25px;
-    background: linear-gradient(90deg, rgba(212,160,23,0.15) 0%, rgba(212,160,23,0.05) 50%, rgba(212,160,23,0.15) 100%);
+    position: relative; z-index:5;
+    margin: 8px 45px 35px;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, rgba(212,160,23,0.14) 0%, rgba(212,160,23,0.05) 50%, rgba(212,160,23,0.14) 100%);
     border-top: 1px solid rgba(212,160,23,0.2);
     border-bottom: 1px solid rgba(212,160,23,0.2);
-    display: flex; align-items: center; justify-content: space-between;
+    display: flex; align-items: center; justify-content: space-between; gap:16px;
     flex-shrink: 0;
   }
   .footer-quote {
     font-family: 'Cormorant Garamond', serif; font-style: italic;
-    font-size: 0.8rem; color: rgba(255,255,255,0.5); line-height:1.3;
+    font-size: 0.72rem; color: rgba(255,255,255,0.48); line-height:1.4; flex:1;
   }
   .footer-quote span {
-    display: block; font-size: 0.5rem; letter-spacing:0.2em; color:#A87C10;
-    font-style: normal; font-family: 'Montserrat', sans-serif; text-transform:uppercase;
+    display: block; font-size: 0.48rem; letter-spacing:0.22em; color:#A87C10;
+    font-style: normal; font-family: 'Montserrat', sans-serif; text-transform:uppercase; margin-top:2px;
   }
   .footer-logo-small {
-    display: flex; flex-direction: column; align-items: center; gap:2px; opacity:0.7;
+    display: flex; flex-direction: column; align-items: center; gap:3px; opacity:0.7;
   }
-  .footer-logo-small img { width:44px; }
+  .footer-logo-small img { width:38px; }
   .footer-logo-small span {
-    font-family: 'Cinzel', serif; font-size: 0.4rem; letter-spacing:0.2em; color:#A87C10; text-transform:uppercase;
+    font-family: 'Cinzel', serif; font-size: 0.38rem; letter-spacing:0.18em;
+    color:#A87C10; text-transform:uppercase; text-align:center; line-height:1.5;
   }
 
-  /* Print reset */
   @media print {
     body { background: white; padding:0; }
     .poster { box-shadow: none; margin:0 auto; }
+    @page { size: A4 portrait; margin: 0; }
   }
 </style>
 </head>
 <body>
 <div class="poster">
 
-  <!-- BACKGROUND LAYERS (same) -->
+  <!-- BACKGROUNDS -->
   <div class="bg-gradient"></div>
   <div class="dots-pattern"></div>
   <svg class="bg-cross-svg" viewBox="0 0 700 900"><rect x="300" y="80" width="100" height="740" fill="white" rx="8"/><rect x="100" y="230" width="500" height="100" fill="white" rx="8"/></svg>
-  <div class="slant-band"></div><div class="slant-band-2"></div>
-  <div class="outer-border"></div><div class="inner-border"></div>
+  <div class="slant-band"></div>
+  <div class="slant-band-2"></div>
+  <div class="outer-border"></div>
+  <div class="inner-border"></div>
 
   <!-- CORNERS -->
   <div class="corner tl"><svg viewBox="0 0 36 36"><path d="M2 34 L2 2 L34 2" stroke="#D4A017" stroke-width="1.5" fill="none" opacity="0.7"/><path d="M2 26 L2 2 L26 2" stroke="#D4A017" stroke-width="0.5" fill="none" opacity="0.4"/><circle cx="2" cy="2" r="2" fill="#D4A017" opacity="0.7"/><path d="M8 2 L2 8" stroke="#D4A017" stroke-width="0.5" opacity="0.4"/><path d="M2 14 L14 2" stroke="#D4A017" stroke-width="0.5" opacity="0.3"/></svg></div>
@@ -307,6 +400,8 @@
       <div class="logo-line" style="background: linear-gradient(90deg, #A87C10, transparent);"></div>
     </div>
     <div class="church-name">Mafefe Church of the Nazarene</div>
+    <div class="church-name">Lebowakgomo Ward</div>
+	</br>
     <div class="ward-title">PRESENTS</div>
   </div>
 
@@ -326,49 +421,190 @@
     <span class="conference-label">CONFERENCE</span>
   </div>
 
-  <!-- DATE & VENUE (theme removed, info row comes next) -->
+  <!-- THEME -->
+  <div class="theme-band">
+    <span class="theme-tag">✦ Conference Theme ✦</span>
+    <div class="theme-text">"The Life Changing Power of the Cross"</div>
+  </div>
+
+  <!-- DATE & VENUE -->
   <div class="info-row">
     <div class="info-card date-card">
-      <div class="info-card-label"><svg width="10" height="10" viewBox="0 0 10 10"><rect x="1" y="2" width="8" height="7" rx="1" stroke="rgba(255,255,255,0.4)" stroke-width="0.8"/><path d="M3 1v2M7 1v2M1 5h8" stroke="rgba(255,255,255,0.4)" stroke-width="0.8"/></svg> Date</div>
-      <div class="date-display"><span class="date-nums">3 – 5</span><div class="date-month-year">APRIL<br>2026</div></div>
+      <div class="info-card-label">
+        <svg width="9" height="9" viewBox="0 0 10 10"><rect x="1" y="2" width="8" height="7" rx="1" stroke="rgba(255,255,255,0.4)" stroke-width="0.8"/><path d="M3 1v2M7 1v2M1 5h8" stroke="rgba(255,255,255,0.4)" stroke-width="0.8"/></svg>
+        Date
+      </div>
+      <div class="date-display">
+        <span class="date-nums">3 – 5</span>
+        <div class="date-month-year">APRIL<br>2026</div>
+      </div>
     </div>
     <div class="info-card venue-card">
-      <div class="info-card-label"><svg width="10" height="10" viewBox="0 0 10 10"><path d="M5 1C3.3 1 2 2.3 2 4c0 2.5 3 5 3 5s3-2.5 3-5c0-1.7-1.3-3-3-3z" stroke="rgba(255,255,255,0.4)" stroke-width="0.8"/><circle cx="5" cy="4" r="1" stroke="rgba(255,255,255,0.4)" stroke-width="0.7"/></svg> Venue</div>
-      <div class="venue-name">Mafefe, Kappa</div><div class="venue-sub">Limpopo · South Africa</div>
+      <div class="info-card-label">
+        <svg width="9" height="9" viewBox="0 0 10 10"><path d="M5 1C3.3 1 2 2.3 2 4c0 2.5 3 5 3 5s3-2.5 3-5c0-1.7-1.3-3-3-3z" stroke="rgba(255,255,255,0.4)" stroke-width="0.8"/><circle cx="5" cy="4" r="1" stroke="rgba(255,255,255,0.4)" stroke-width="0.7"/></svg>
+        Venue
+      </div>
+      <div class="venue-name">Mafefe, Kappa</div>
+      <div class="venue-sub">Limpopo · South Africa</div>
     </div>
   </div>
 
-  <!-- SPEAKERS SECTION -->
+  <!-- PROGRAMME -->
+  <div class="programme">
+    <div class="programme-heading">
+      <div class="prog-diamond"></div>
+      <div class="prog-line"></div>
+      <span class="prog-title">Programme</span>
+      <div class="prog-line"></div>
+      <div class="prog-diamond"></div>
+    </div>
+
+    <div class="sessions-grid">
+
+      <!-- Friday Morning -->
+      <div class="session-day">
+        <div class="session-day-header fri">Friday<br>Morning</div>
+        <div class="session-slots">
+          <div class="session-slot">
+            <div class="slot-dot fri"></div>
+            <div class="slot-text">
+              <span class="slot-label">Session</span>
+              <span class="slot-time">10:00 – 13:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Friday Afternoon -->
+      <div class="session-day">
+        <div class="session-day-header fri">Friday<br>Afternoon</div>
+        <div class="session-slots">
+          <div class="session-slot">
+            <div class="slot-dot fri"></div>
+            <div class="slot-text">
+              <span class="slot-label">Session</span>
+              <span class="slot-time">16:00 – 18:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Saturday Morning -->
+      <div class="session-day">
+        <div class="session-day-header sat">Saturday<br>Morning</div>
+        <div class="session-slots">
+          <div class="session-slot">
+            <div class="slot-dot sat"></div>
+            <div class="slot-text">
+              <span class="slot-label">Session</span>
+              <span class="slot-time">10:00 – 13:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Saturday Afternoon -->
+      <div class="session-day">
+        <div class="session-day-header sat">Saturday<br>Afternoon</div>
+        <div class="session-slots">
+          <div class="session-slot">
+            <div class="slot-dot sat"></div>
+            <div class="slot-text">
+              <span class="slot-label">Session</span>
+              <span class="slot-time">16:00 – 18:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sunday Morning -->
+      <div class="session-day">
+        <div class="session-day-header sun">Sunday<br>Morning</div>
+        <div class="session-slots">
+          <div class="session-slot">
+            <div class="slot-dot sun"></div>
+            <div class="slot-text">
+              <span class="slot-label">Session</span>
+              <span class="slot-time">10:00 – 13:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SPEAKERS -->
   <div class="speakers-section">
-    <div class="section-heading"><span class="section-heading-text">Guest Speakers</span></div>
+    <div class="section-heading">
+      <span class="section-heading-text">Guest Speakers</span>
+    </div>
 
     <!-- FEATURED PASTOR -->
     <div class="featured-pastor">
-      <div class="photo-ring-lg"><div class="photo-inner-lg"><img class="photo-rev" src="images/mor_rm.png" alt="Rev. MJ Motebejana"></div></div>
-      <div class="featured-info"><div class="featured-name">Rev. MJ Motebejana</div></div>
+      <div class="photo-ring-lg">
+        <div class="photo-inner-lg">
+          <img class="photo-rev" src="images/mor_rm.png" alt="Rev. MJ Motebejana">
+        </div>
+      </div>
+      <div class="featured-info">
+        <div class="featured-name">Rev. MJ Motebejana</div>
+        <div class="featured-role">Presiding Minister</div>
+      </div>
     </div>
 
-    <!-- DIVIDER "Also Featuring" -->
+    <!-- ALSO FEATURING DIVIDER -->
     <div class="pastor-divider">
       <div class="pastor-divider-line"></div>
-      <div class="pastor-divider-center"><div class="pd-diamond"></div><span class="pd-cross">✝</span><span class="pd-text">Also Featuring</span><span class="pd-cross">✝</span><div class="pd-diamond"></div></div>
+      <div class="pastor-divider-center">
+        <div class="pd-diamond"></div>
+        <span class="pd-cross">✝</span>
+        <span class="pd-text">Also Featuring</span>
+        <span class="pd-cross">✝</span>
+        <div class="pd-diamond"></div>
+      </div>
       <div class="pastor-divider-line right"></div>
     </div>
 
-    <!-- SPEAKERS DUO (two cards) -->
-    <div class="speakers-trio">
-      <div class="speaker-card"><div class="photo-ring s2"><div class="photo-inner s2"><img class="photo-speaker" src="images/li2.jpg" alt="Linda Thobejane"></div></div><div class="speaker-info"><div class="speaker-name">Ms Linda Thobejane</div><div class="speaker-role s2">Speaker</div></div></div>
-      <div class="speaker-card"><div class="photo-ring s3"><div class="photo-inner s3"><img class="photo-speaker" src="images/mok.png" alt="Bro Thebi Mokone"></div></div><div class="speaker-info"><div class="speaker-name">Bro Thebi Mokone</div><div class="speaker-role s3">Speaker</div></div></div>
+    <!-- SPEAKERS DUO -->
+    <div class="speakers-duo">
+      <div class="speaker-card">
+        <div class="photo-ring s2">
+          <div class="photo-inner s2">
+            <img src="images/li2.jpg" alt="Ms Linda Thobejane">
+          </div>
+        </div>
+        <div class="speaker-info">
+          <div class="speaker-name">Ms Linda Thobejane</div>
+          <div class="speaker-role s2">Speaker</div>
+        </div>
+      </div>
+      <div class="speaker-card">
+        <div class="photo-ring s3">
+          <div class="photo-inner s3">
+            <img src="images/mok.png" alt="Bro Thebi Mokone">
+          </div>
+        </div>
+        <div class="speaker-info">
+          <div class="speaker-name">Bro Thebi Mokone</div>
+          <div class="speaker-role s3">Speaker</div>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- FOOTER -->
   <div class="footer-band">
-    <div class="footer-quote">"For God so loved the world that He gave His only begotten Son…" <span>— John 3:16</span></div>
-    <div class="footer-logo-small"><img class="logo-img" src="images/logo_gold_rm.png" alt="Church of the Nazarene"><span>Church of<br>the Nazarene</span></div>
+    <div class="footer-quote">
+      "For the message of the cross is foolishness to those who are perishing, but to us who are being saved it is the power of God."
+      <span>— 1 Corinthians 1:18</span>
+    </div>
+    <div class="footer-logo-small">
+      <img src="images/logo_gold_rm.png" alt="Church of the Nazarene">
+      <span>Church of<br>the Nazarene</span>
+    </div>
   </div>
 
-  <!-- no rainbow bar – footer is last element, flush with bottom -->
 </div>
 </body>
 </html>
